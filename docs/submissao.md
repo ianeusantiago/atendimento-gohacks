@@ -1,4 +1,4 @@
-# Submissão · GoHacks Talent 2026 (prazo 16h30)
+# Submissão do hackathon (prazo 16h30)
 
 ## 1. Nome do projeto
 GoResolve
@@ -19,7 +19,7 @@ Na fila de 65 conversas, 59 (91%) foram resolvidas sem pessoa, 3 aguardam aprova
 PDF exportado do Canva (9 slides).
 
 ## 7. GitHub
-https://github.com/ianeusantiago/atendimento-gohacks
+https://github.com/ianeusantiago/goresolve
 
 ## 8. Aplicação publicada
 https://goresolve.vercel.app

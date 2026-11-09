@@ -1,4 +1,4 @@
-# GoHacks Talent 2026: perguntas, slides e pitch
+# Hackathon: perguntas, slides e pitch
 
 ## 8. Modelos de slides, pitch e sabatina
 
@@ -57,7 +57,7 @@ Se não souber, use a saída do toolkit: "Não cheguei lá ainda, mas o próximo
 Cole o prompt abaixo (Sonnet 5.5, esforço baixo) quando o produto do sábado estiver pronto. O roteiro de referência vem logo depois e é o modelo que eu quero.
 
 ```text
-Escreva meu roteiro de pitch de 4 minutos para o GoHacks.
+Escreva meu roteiro de pitch de 4 minutos para o hackathon.
 O MODELO É O ROTEIRO DE REFERÊNCIA COLADO ABAIXO. Siga exatamente a estrutura, a ordem, os tempos e o estilo dele:
 
 1. Problema (0:00 a 0:35)

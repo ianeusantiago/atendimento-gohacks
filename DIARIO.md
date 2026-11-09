@@ -12,7 +12,7 @@ Medido agora, nesta sessão de documentação:
 
 ## 2026-11-07 15:11 · 2dcef47 · Marcar como resolvido e tempo poupado estimado
 - **O quê:** botão "✓ Marcar como resolvido" (e "Reabrir") no detalhe de casos humanos; "✓ resolvido" na fila; na aba Impacto, "resolvidos pela atendente" e "≈ 12 h 00 min de trabalho poupado"; coluna `resolvido` no CSV.
-- **Como:** `pipeline/export.py` ganhou `tempo_referencia()`, que lê `tempo_por_conversa.csv` e grava no export a média de `minutos_trabalhados` (12,2 min em 2.654 conversas). O schema público aceita o campo opcional `tempo_referencia`. A tela calcula `tempoPoupado` = conversas automáticas (59) × média. Resolvidos ficam no `localStorage` (`atendimento-gohacks:resolvidos:v1`).
+- **Como:** `pipeline/export.py` ganhou `tempo_referencia()`, que lê `tempo_por_conversa.csv` e grava no export a média de `minutos_trabalhados` (12,2 min em 2.654 conversas). O schema público aceita o campo opcional `tempo_referencia`. A tela calcula `tempoPoupado` = conversas automáticas (59) × média. Resolvidos ficam no `localStorage` (`goresolve:resolvidos:v1`).
 - **Por quê:** pedido do Ian depois de conversa com mentor ("um atendente tem um escopo maior de coisas a resolver"); escolheu estas duas funções da lista proposta.
 - **Prova:** testes "tempo poupado = automáticas × média histórica" e "marcar como resolvido só em caso humano..." em `web/render.test.js`; export regerado só mudou tempos do log (`ms`) e ganhou `tempo_referencia`.
 - **Não testado:** a premissa de que uma conversa automática pouparia a média histórica inteira: estimativa, não medição.
@@ -26,7 +26,7 @@ Medido agora, nesta sessão de documentação:
 
 ## 2026-11-07 14:54 · 0eeeb0a · Aprovação com motivo e lote; fila com filtros, prazo e teclado
 - **O quê:** rejeitar exige motivo; aprovação em lote; o cartão mostra a resposta que vai ao cliente; fila com filtros (destino, canal, busca), prazo de primeira resposta e navegação por setas.
-- **Como:** `renderApprovals(..., opts)`, `prazoResposta`, `passaFiltro`, `renderFiltros` em `web/render.js`; estado e cliques em `web/app.js`; motivo em `atendimento-gohacks:motivos:v1`.
+- **Como:** `renderApprovals(..., opts)`, `prazoResposta`, `passaFiltro`, `renderFiltros` em `web/render.js`; estado e cliques em `web/app.js`; motivo em `goresolve:motivos:v1`.
 - **Por quê:** pedido do Ian ("faça a parte da aprovação humana e a fila").
 - **Prova:** testes da tela (22 na época, segundo a sessão; hoje 27).
 - **Não testado:** leitor de tela e teclado completos (acessibilidade): NÃO VERIFICADO.
@@ -60,7 +60,7 @@ Medido agora, nesta sessão de documentação:
 - **Por quê:** tornar a demo de 90 segundos clara para a banca. O pedido original de cada mudança não está no repositório: a confirmar.
 - **O que é real e o que é simulação (lido no código):**
   - "O agente lê a fila ao vivo" e a linha do tempo são ANIMAÇÃO sobre resultados já prontos. `loadData` só faz `fetch` de `data/results.json`; não há chamada ao modelo nem ao proxy no navegador. O roteiro diz: "é uma reprodução do que o pipeline já decidiu".
-  - Editar a resposta e aprovar não fazem nada além do navegador. Edições e decisões vão para o `localStorage` (chaves `atendimento-gohacks:edicoes:v1` e `atendimento-gohacks:decisoes:v1`). Nada vai a servidor nem ao cliente. A "consequência" é um texto (`consequencia` em `render.js`), e o código diz "é simulação: o site não executa nada".
+  - Editar a resposta e aprovar não fazem nada além do navegador. Edições e decisões vão para o `localStorage` (chaves `goresolve:edicoes:v1` e `goresolve:decisoes:v1`). Nada vai a servidor nem ao cliente. A "consequência" é um texto (`consequencia` em `render.js`), e o código diz "é simulação: o site não executa nada".
   - Ao salvar uma edição, `temPii` recusa texto parecido com CPF, cartão ou telefone (anos como "2026 2027" passam). É checagem de padrão, não garantia.
   - Com "movimento reduzido" ligado no sistema, o resultado aparece direto, sem animação.
 - **Prova:** `node --test web/`: 20/20. Testes novos, pelo nome: "edição só antes do envio...", "texto editado com CPF, cartão ou telefone é recusado...", "agente em ação: um passo por etapa do log...", "decisão humana mostra a consequência simulada...", "fila antes do agente: conversas 'Na fila'...".

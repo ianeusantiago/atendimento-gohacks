@@ -1,4 +1,4 @@
-# Projeto: atendimento-gohacks (GoHacks Talent 2026, Desafio 1: Atendimento ao Cliente)
+# Projeto: goresolve (hackathon de IA, 2026: desafio de atendimento ao cliente)
 Objetivo: triagem de conversas de atendimento (Modaviva e Belleza). Um agente classifica cada
 conversa, consulta pedido, rastreio, pagamento e anexos, executa sozinho o que a política
 permite e manda para pessoa o que passa do limite, é sensível ou suspeito.

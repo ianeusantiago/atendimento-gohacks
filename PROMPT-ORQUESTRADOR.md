@@ -2,7 +2,7 @@
 
 Nov 7, 2026 · @Ian
 
-Versão do Plano A (agent team) de `GoHacks-prompts-diario-e-estudo-vivo.md`, já preenchida para o Desafio 1. Atualizado com as bases reais do desafio (pasta `atendimento` do Drive do evento). Os campos abertos dependem do dia: o usuário-chave confirmado com o mentor e o acesso ao ambiente simulado.
+Versão do Plano A (agent team) de `prompts-diario-e-estudo-vivo.md`, já preenchida para o Desafio 1. Atualizado com as bases reais do desafio (pasta `atendimento` do Drive do evento). Os campos abertos dependem do dia: o usuário-chave confirmado com o mentor e o acesso ao ambiente simulado.
 
 Antes de colar:
 1. Defina `CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS=1` no `settings.json` ou no ambiente.
@@ -20,7 +20,7 @@ Antes de colar:
 Se o notebook não aceitar agent teams, use o Plano B do documento principal e copie o bloco CONTEXTO abaixo para o `CONTEXTO.md`.
 
 ```text
-Crie uma agent team para construir um projeto do GoHacks Talent.
+Crie uma agent team para construir um projeto de hackathon.
 O projeto deve ser desenvolvido hoje, usando apenas os dados fornecidos pela organização.
 
 CONTEXTO

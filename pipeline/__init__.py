@@ -1,1 +1,1 @@
-"""Agente de triagem de atendimento (GoHacks Talent 2026, Desafio 1)."""
+"""Agente de triagem de atendimento (hackathon de IA, 2026)."""

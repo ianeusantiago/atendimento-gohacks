@@ -3,7 +3,7 @@
 **Triagem de atendimento com IA para Modaviva e Belleza.**
 A IA lê, o código decide, a pessoa aprova.
 
-GoHacks Talent 2026 · Desafio 1 (Atendimento ao Cliente) · empresa fictícia
+Hackathon de IA · 2026 · desafio de atendimento ao cliente · empresa fictícia
 
 **Aplicação:** https://goresolve.vercel.app
 

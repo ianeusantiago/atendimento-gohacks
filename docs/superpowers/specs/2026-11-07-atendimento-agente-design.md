@@ -1,4 +1,4 @@
-# Agente de triagem de atendimento: design (GoHacks Talent 2026, Desafio 1)
+# Agente de triagem de atendimento: design (hackathon de IA, 2026)
 
 Data: 2026-11-07 · Autor: Ian (decisões de produto) · Rascunho por Claude · Status: aguardando aprovação
 
@@ -61,7 +61,7 @@ SPEC.md como "a confirmar". O Ian decidiu que isso não bloqueia agora.
 - Ambiente: Python 3.15 via `py` (o atalho `python` está quebrado); Node 26.13.0 em
   `C:\Program Files\nodejs`, que ainda não está no PATH da sessão do Claude Code.
 - O site publicado na Vercel é público: só pode conter dados derivados e mascarados.
-  O repositório `ianeusantiago/atendimento-gohacks` deve ser tratado como público até o
+  O repositório `ianeusantiago/goresolve` deve ser tratado como público até o
   Ian dizer o contrário.
 
 ## Abordagens consideradas
@@ -84,7 +84,7 @@ SPEC.md como "a confirmar". O Ian decidiu que isso não bloqueia agora.
   em CSV agora; a implementação remota só é escrita quando o formato do ambiente for conhecido.
 - Demo sobre as 65 da fila (opção A): sem usar o histórico para mostrar o suspeito na tela. O
   Ian escolheu isso sabendo que a fila não tem fotos.
-- O repositório `ianeusantiago/atendimento-gohacks` é público (confirmado pelo Ian).
+- O repositório `ianeusantiago/goresolve` é público (confirmado pelo Ian).
 
 ## Decisões de Claude (a conferir)
 - Claude faz a ponte entre os agentes com subagentes da própria sessão (Sonnet 5.5 para o

@@ -5,11 +5,11 @@
 import { renderSummary, renderQueue, renderDetail, renderApprovals, renderRevisao, renderFiltros,
   filtroAtivo, podeEditar, temPii, renderImpacto, paraCsv, textoPronto } from "./render.js";
 
-const STORAGE_KEY = "atendimento-gohacks:decisoes:v1";
-const EDITS_KEY = "atendimento-gohacks:edicoes:v1";
-const MOTIVOS_KEY = "atendimento-gohacks:motivos:v1";
-const ENC_KEY = "atendimento-gohacks:encaminhamentos:v1";
-const RESOLV_KEY = "atendimento-gohacks:resolvidos:v1";
+const STORAGE_KEY = "goresolve:decisoes:v1";
+const EDITS_KEY = "goresolve:edicoes:v1";
+const MOTIVOS_KEY = "goresolve:motivos:v1";
+const ENC_KEY = "goresolve:encaminhamentos:v1";
+const RESOLV_KEY = "goresolve:resolvidos:v1";
 const $ = (sel) => document.querySelector(sel);
 
 const state = { data: null, selected: null, decisions: {}, edits: {}, erros: {}, feitos: 0,

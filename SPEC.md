@@ -1,4 +1,4 @@
-# SPEC: agente de triagem de atendimento (GoHacks Talent 2026, Desafio 1)
+# SPEC: agente de triagem de atendimento (hackathon de IA, 2026)
 
 Base: `docs/superpowers/specs/2026-11-07-atendimento-agente-design.md` e `docs/baseline.md`.
 
