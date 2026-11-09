@@ -19,7 +19,7 @@ Na fila de 65 conversas, 59 (91%) foram resolvidas sem pessoa, 3 aguardam aprova
 PDF exportado do Canva (9 slides).
 
 ## 7. GitHub
-https://github.com/ianeusantiago/goresolve
+https://github.com/ianeusantiago/atendimento-goresolve
 
 ## 8. Aplicação publicada
 https://goresolve.vercel.app
