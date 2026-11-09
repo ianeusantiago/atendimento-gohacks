@@ -22,7 +22,7 @@ CASOS = Path(__file__).resolve().parent.parent / "evals" / "casos.csv"
 def _pedido(**campos):
     """Pedido sintético entregue em 30/10 (3 dias antes de NOW); prometido para 03/11
     (28/10 + preparo Belleza 1 + TransLeste/SE 2 dias úteis; 02/11 é feriado)."""
-    base = {"order_id": "GBHT00001", "customer_id": "CHT00001", "marca": "Lescent",
+    base = {"order_id": "GBHT00001", "customer_id": "CHT00001", "marca": "Lumen",
             "data_pedido": "2026-10-28", "valor": "150.00",
             "descricao_produto": "Body Mist Baunilha 200ml", "personalizacao": "",
             "transportadora": "TransLeste", "uf": "SP", "status_entrega": "entregue",

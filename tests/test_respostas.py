@@ -25,7 +25,7 @@ def _gw():
 
 
 def _pedido(**campos):
-    base = {"order_id": "GBHT00001", "customer_id": "CHT00001", "marca": "Lescent",
+    base = {"order_id": "GBHT00001", "customer_id": "CHT00001", "marca": "Lumen",
             "data_pedido": "2026-10-28", "valor": "150.00",
             "descricao_produto": "Body Mist Baunilha 200ml", "personalizacao": "",
             "transportadora": "TransLeste", "uf": "SP", "status_entrega": "em_transito",

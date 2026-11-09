@@ -33,12 +33,12 @@ DESTINOS = {"solicitar_aprovacao": "aprovacao", "acionar_pessoa": "pessoa",
 FORA_DAS_SECUNDARIAS = {"classificar_conversa", "responder_cliente"}
 SEM_CATEGORIA = "nao_classificada"
 
-_CONVERSA = re.compile(r"\bAT\d{6}\b")
-_PEDIDO = re.compile(r"\bG[A-Z]H\d{6}(?:-R\d+)?\b")
+_CONVERSA = re.compile(r"\bCV\d{6}\b")
+_PEDIDO = re.compile(r"\bPED\d{6}(?:-R\d+)?\b")
 _CLIENTE = re.compile(r"\bCH\d{6}\b")
 _OUTRO_CODIGO =re.compile(r"\b[A-Z]{2,4}\d{5,}\b")
 # O que nunca pode sobrar no arquivo (conversa, pedido, cliente).
-ID_ORIGINAL = re.compile(r"AT\d{6}|G[CB]H\d+|CH\d{6}")
+ID_ORIGINAL = re.compile(r"CV\d{6}|PED\d+|CH\d{6}")
 
 
 class PIILeak(ValueError):

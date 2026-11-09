@@ -22,7 +22,7 @@ IDS = re.compile(r"AT\d{6}|G[CB]H\d+|CH\d{6}")
 
 def _r(cid="CV000009", prioridade=1, ferramenta="informar_status", motivo="Pedido em trânsito.",
        resposta="Olá! Seu pedido PED000003 está em trânsito.", enviada=True, calls=None,
-       evidencias=(), regra="onde_esta_pedido", params=None, marca="Lescent"):
+       evidencias=(), regra="onde_esta_pedido", params=None, marca="Lumen"):
     return CaseResult(
         conversation_id=cid, canal="whatsapp", prioridade=prioridade,
         classificacao={"categoria": "onde_esta_pedido", "categoria_secundaria": None,

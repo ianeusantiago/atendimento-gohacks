@@ -22,7 +22,7 @@ INICIO_EMBALAGEM = ("caixa", "embalagem", "itens")
 PALAVRAS_IGNORADAS = {"personalizado", "personalizada", "iniciais", "nome", "foto", "brinde"}
 # Mesmo objeto com outro nome (descrição visual -> nome do catálogo).
 SINONIMOS = {"capinha": "case"}
-CODIGO_PEDIDO = re.compile(r"\bg[a-z]h\d{6}\b")
+CODIGO_PEDIDO = re.compile(r"\bped\d{6}\b")
 
 # Sinais que bastam sozinhos para sinalizar (fato verificável contra outros dados).
 # exif_software_edicao e descricao_incoerente só corroboram: um recorte no editor da

@@ -32,7 +32,7 @@ Medido agora, nesta sessão de documentação:
 - **Não testado:** leitor de tela e teclado completos (acessibilidade): NÃO VERIFICADO.
 
 ## 2026-11-07 14:19 · 4b4c66c · Belleza sem acento
-- **O quê:** a grafia da marca passou de "GoBeauté" para "Belleza" em 17 arquivos: site (`web/index.html`), export (`pipeline/export.py`), schema (`schemas/resultado_publico.schema.json`), testes, `web/data/results.json` e documentos (CLAUDE.md, SPEC.md, `docs/baseline.md`, `docs/roteiro-demo.md` e outros). Fonte: `git show --stat 4b4c66c`.
+- **O quê:** a grafia da marca passou de "Belleza" para "Belleza" em 17 arquivos: site (`web/index.html`), export (`pipeline/export.py`), schema (`schemas/resultado_publico.schema.json`), testes, `web/data/results.json` e documentos (CLAUDE.md, SPEC.md, `docs/baseline.md`, `docs/roteiro-demo.md` e outros). Fonte: `git show --stat 4b4c66c`.
 - **Como:** troca do texto nos arquivos. O corpo do commit só registra: "pytest 476; node 20/20; evals 14/15".
 - **Por quê:** o título do commit diz "grafia correta da marca". Quem confirmou a grafia: a confirmar (pergunta ao Ian).
 - **Prova:** os três comandos do "Estado" acima, rodados por mim em HEAD.

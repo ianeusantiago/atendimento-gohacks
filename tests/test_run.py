@@ -27,7 +27,7 @@ CPF, TEL, CARTAO = "123.456.789-09", "(11) 98765-4321", "4111 1111 1111 1111"
 
 def _conv(cid, order_id="", canal="email", abertura="2026-11-01 10:00:00", cliente="C1"):
     return {"conversation_id": cid, "customer_id": cliente, "order_id": order_id,
-            "marca": "Lescent", "canal": canal, "data_abertura": abertura,
+            "marca": "Lumen", "canal": canal, "data_abertura": abertura,
             "status": "aberto", "assunto": "x"}
 
 
@@ -37,7 +37,7 @@ def _msg(cid, texto, autor="cliente", i=1):
 
 
 def _pedido(order_id="PED000001", cliente="C1", **campos):
-    base = {"order_id": order_id, "customer_id": cliente, "marca": "Lescent",
+    base = {"order_id": order_id, "customer_id": cliente, "marca": "Lumen",
             "data_pedido": "2026-10-28", "valor": "150.00", "sku": "GBT-1",
             "descricao_produto": "Body Mist Baunilha 200ml", "personalizacao": "",
             "transportadora": "TransLeste", "uf": "SP", "status_entrega": "em_transito",
@@ -454,7 +454,7 @@ def test_result_traz_marca_e_dados_do_pedido_sem_ids():
     gw = FakeGateway(fila=[_conv("A1", "PED000001")], pedidos=[pedido], clientes=[_cliente()],
                      mensagens={"A1": [_msg("A1", "cadê meu pedido?")]})
     r = run_conversation(gw, POLICY, _fixo({"A1": _cl()}), "A1")
-    assert r.marca == "Lescent"
+    assert r.marca == "Lumen"
     rotulos = {d["rotulo"]: d["valor"] for d in r.dados}
     assert rotulos["Status do pedido"] == "em_transito"
     assert rotulos["Valor do pedido"] == "R$ 150,00"
