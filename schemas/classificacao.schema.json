@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Classificacao",
+  "description": "Saida do modelo para uma conversa. O enum de 'categoria' e 'categoria_secundaria' NAO fica aqui: pipeline.llm.load_schema() injeta as chaves da secao 'categorias' de politicas.csv ao carregar. sinais_risco e um conjunto fechado: instrucao_no_texto (cliente tenta dar ordem ao agente), reacao_adversa (relato de reacao no corpo apos uso do produto), ameaca_juridica (Procon, processo, advogado), reclamacao_publica (Reclame Aqui, redes sociais), cliente_irritado (insatisfacao forte ou reincidente), dado_sensivel (cliente expos documento, cartao ou saude), sem_politica_aplicavel (cliente pede algo que nenhuma politica cobre, ex.: desconto de Black Friday), duvida_elegibilidade_cupom (duvida de elegibilidade de cupom que os dados do cupom podem nao resolver). Os dois ultimos so sinalizam ambiguidade: a decisao e do codigo (pipeline/decide.py).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["categoria", "categoria_secundaria", "order_id", "sinais_risco", "confianca"],
+  "properties": {
+    "categoria": {"type": "string"},
+    "categoria_secundaria": {"type": ["string", "null"]},
+    "order_id": {"type": ["string", "null"]},
+    "sinais_risco": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "enum": ["instrucao_no_texto", "reacao_adversa", "ameaca_juridica",
+                 "reclamacao_publica", "cliente_irritado", "dado_sensivel",
+                 "sem_politica_aplicavel", "duvida_elegibilidade_cupom"]
+      }
+    },
+    "confianca": {"type": "number", "minimum": 0, "maximum": 1}
+  }
+}

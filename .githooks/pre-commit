@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+staged=$(git diff --cached --name-only)
+if echo "$staged" | grep -qE '^(pipeline|schemas|prompts|web|scripts)/'; then
+  faltam=""
+  for f in DIARIO.md ESTUDAR.md PERGUNTAS.md; do
+    echo "$staged" | grep -qx "$f" || faltam="$faltam $f"
+  done
+  if [ -n "$faltam" ]; then
+    echo "AVISO: código alterado sem:$faltam" >&2
+    echo 'Peça ao documentador ("documente") e inclua os arquivos neste commit.' >&2
+  fi
+fi
+exit 0

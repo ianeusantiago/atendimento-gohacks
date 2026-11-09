@@ -1,0 +1,16 @@
+caso_id,conversation_id,origem,tipo,categoria_esperada,acao_esperada,regra_politicas
+N01,CV000033,fila,normal,onde_esta_pedido,informar_status,onde_esta_pedido
+N02,CV000015,fila,normal,onde_esta_pedido,informar_status,onde_esta_pedido
+N03,CV000037,fila,normal,atraso_entrega,abrir_chamado_transportadora,atraso_entrega
+N04,CV000042,fila,normal,atraso_entrega,abrir_chamado_transportadora,atraso_entrega
+N05,CV000004,historico,normal,arrependimento_cancelamento,cancelar_pedido,arrependimento_cancelamento
+N06,CV000003,historico,dificil,arrependimento_cancelamento,acionar_pessoa,arrependimento_cancelamento
+N07,CV000027,fila,normal,alteracao_endereco,alterar_endereco,alteracao_endereco
+N08,CV000002,historico,normal,alteracao_endereco,alterar_endereco,alteracao_endereco
+D01,CV000001,historico,dificil,avaria_vazamento,sinalizar_suspeita,reclamacao_suspeita
+D02,CV000051,fila,dificil,cobranca_duplicada,solicitar_aprovacao,cobranca_duplicada
+D03,CV000028,fila,dificil,reacao_adversa,orientar_suspensao_uso;registrar_cosmetovigilancia,reacao_adversa
+D04,CV000039,fila,dificil,item_faltante,acionar_pessoa,item_faltante
+A01,CV000066,fila,ambiguo,cupom_promocao,validar_cupom;acionar_pessoa,cupom_promocao
+A02,CV000048,fila,ambiguo,cupom_promocao,acionar_pessoa,cupom_promocao
+M01,CV000006,historico,malicioso,atraso_entrega,abrir_chamado_transportadora,atraso_entrega

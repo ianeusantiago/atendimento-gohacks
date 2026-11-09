@@ -1,0 +1,505 @@
+{
+ "CV000001": {
+  "categoria": "avaria_vazamento",
+  "categoria_secundaria": null,
+  "order_id": "PED000041",
+  "sinais_risco": [
+   "cliente_irritado",
+   "dado_sensivel"
+  ],
+  "confianca": 0.99
+ },
+ "CV000002": {
+  "categoria": "alteracao_endereco",
+  "categoria_secundaria": null,
+  "order_id": null,
+  "sinais_risco": [],
+  "confianca": 0.99
+ },
+ "CV000003": {
+  "categoria": "arrependimento_cancelamento",
+  "categoria_secundaria": "cobranca_duplicada",
+  "order_id": "PED000040",
+  "sinais_risco": [],
+  "confianca": 0.99
+ },
+ "CV000004": {
+  "categoria": "arrependimento_cancelamento",
+  "categoria_secundaria": null,
+  "order_id": "PED000004",
+  "sinais_risco": [],
+  "confianca": 0.99
+ },
+ "CV000006": {
+  "categoria": "atraso_entrega",
+  "categoria_secundaria": "arrependimento_cancelamento",
+  "order_id": "PED000042",
+  "sinais_risco": [
+   "instrucao_no_texto",
+   "cliente_irritado"
+  ],
+  "confianca": 0.92
+ },
+ "CV000011": {
+  "categoria": "onde_esta_pedido",
+  "categoria_secundaria": null,
+  "order_id": "PED000022",
+  "sinais_risco": [],
+  "confianca": 0.94
+ },
+ "CV000012": {
+  "categoria": "onde_esta_pedido",
+  "categoria_secundaria": null,
+  "order_id": "PED000030",
+  "sinais_risco": [],
+  "confianca": 0.98
+ },
+ "CV000014": {
+  "categoria": "atraso_entrega",
+  "categoria_secundaria": null,
+  "order_id": "PED000025",
+  "sinais_risco": [
+   "cliente_irritado"
+  ],
+  "confianca": 0.99
+ },
+ "CV000015": {
+  "categoria": "onde_esta_pedido",
+  "categoria_secundaria": null,
+  "order_id": "PED000047",
+  "sinais_risco": [],
+  "confianca": 0.99
+ },
+ "CV000016": {
+  "categoria": "atraso_entrega",
+  "categoria_secundaria": null,
+  "order_id": "PED000023",
+  "sinais_risco": [
+   "reclamacao_publica",
+   "cliente_irritado"
+  ],
+  "confianca": 0.99
+ },
+ "CV000017": {
+  "categoria": "item_faltante",
+  "categoria_secundaria": null,
+  "order_id": "PED000021",
+  "sinais_risco": [],
+  "confianca": 0.99
+ },
+ "CV000018": {
+  "categoria": "atraso_entrega",
+  "categoria_secundaria": null,
+  "order_id": "PED000013",
+  "sinais_risco": [
+   "reclamacao_publica",
+   "cliente_irritado",
+   "dado_sensivel"
+  ],
+  "confianca": 0.99
+ },
+ "CV000019": {
+  "categoria": "onde_esta_pedido",
+  "categoria_secundaria": null,
+  "order_id": "PED000031",
+  "sinais_risco": [],
+  "confianca": 0.98
+ },
+ "CV000020": {
+  "categoria": "arrependimento_cancelamento",
+  "categoria_secundaria": null,
+  "order_id": "PED000012",
+  "sinais_risco": [],
+  "confianca": 0.99
+ },
+ "CV000021": {
+  "categoria": "onde_esta_pedido",
+  "categoria_secundaria": null,
+  "order_id": "PED000048",
+  "sinais_risco": [],
+  "confianca": 0.97
+ },
+ "CV000022": {
+  "categoria": "erro_personalizacao",
+  "categoria_secundaria": null,
+  "order_id": "PED000045",
+  "sinais_risco": [
+   "cliente_irritado"
+  ],
+  "confianca": 0.98
+ },
+ "CV000023": {
+  "categoria": "atraso_entrega",
+  "categoria_secundaria": null,
+  "order_id": "PED000005",
+  "sinais_risco": [],
+  "confianca": 0.99
+ },
+ "CV000024": {
+  "categoria": "avaria_vazamento",
+  "categoria_secundaria": null,
+  "order_id": "PED000026",
+  "sinais_risco": [],
+  "confianca": 0.99
+ },
+ "CV000025": {
+  "categoria": "atraso_entrega",
+  "categoria_secundaria": null,
+  "order_id": "PED000010",
+  "sinais_risco": [],
+  "confianca": 0.99
+ },
+ "CV000026": {
+  "categoria": "item_faltante",
+  "categoria_secundaria": null,
+  "order_id": "PED000015",
+  "sinais_risco": [
+   "dado_sensivel"
+  ],
+  "confianca": 0.98
+ },
+ "CV000027": {
+  "categoria": "alteracao_endereco",
+  "categoria_secundaria": null,
+  "order_id": "PED000036",
+  "sinais_risco": [],
+  "confianca": 0.99
+ },
+ "CV000028": {
+  "categoria": "reacao_adversa",
+  "categoria_secundaria": null,
+  "order_id": "PED000018",
+  "sinais_risco": [
+   "reacao_adversa"
+  ],
+  "confianca": 0.99
+ },
+ "CV000029": {
+  "categoria": "item_faltante",
+  "categoria_secundaria": null,
+  "order_id": "PED000011",
+  "sinais_risco": [
+   "cliente_irritado"
+  ],
+  "confianca": 0.99
+ },
+ "CV000030": {
+  "categoria": "atraso_entrega",
+  "categoria_secundaria": null,
+  "order_id": "PED000046",
+  "sinais_risco": [],
+  "confianca": 0.97
+ },
+ "CV000031": {
+  "categoria": "item_faltante",
+  "categoria_secundaria": null,
+  "order_id": "PED000017",
+  "sinais_risco": [],
+  "confianca": 0.99
+ },
+ "CV000032": {
+  "categoria": "duvida_produto",
+  "categoria_secundaria": "cupom_promocao",
+  "order_id": null,
+  "sinais_risco": [],
+  "confianca": 0.99
+ },
+ "CV000033": {
+  "categoria": "onde_esta_pedido",
+  "categoria_secundaria": null,
+  "order_id": "PED000033",
+  "sinais_risco": [],
+  "confianca": 0.99
+ },
+ "CV000034": {
+  "categoria": "cupom_promocao",
+  "categoria_secundaria": null,
+  "order_id": null,
+  "sinais_risco": [],
+  "confianca": 0.99
+ },
+ "CV000035": {
+  "categoria": "atraso_entrega",
+  "categoria_secundaria": null,
+  "order_id": "PED000044",
+  "sinais_risco": [],
+  "confianca": 0.99
+ },
+ "CV000036": {
+  "categoria": "item_faltante",
+  "categoria_secundaria": null,
+  "order_id": "PED000020",
+  "sinais_risco": [],
+  "confianca": 0.99
+ },
+ "CV000037": {
+  "categoria": "atraso_entrega",
+  "categoria_secundaria": null,
+  "order_id": null,
+  "sinais_risco": [
+   "cliente_irritado"
+  ],
+  "confianca": 0.99
+ },
+ "CV000038": {
+  "categoria": "item_faltante",
+  "categoria_secundaria": null,
+  "order_id": "PED000024",
+  "sinais_risco": [],
+  "confianca": 0.99
+ },
+ "CV000039": {
+  "categoria": "item_faltante",
+  "categoria_secundaria": "avaria_vazamento",
+  "order_id": null,
+  "sinais_risco": [
+   "cliente_irritado"
+  ],
+  "confianca": 0.98
+ },
+ "CV000040": {
+  "categoria": "pagamento_pendente",
+  "categoria_secundaria": null,
+  "order_id": "PED000038",
+  "sinais_risco": [],
+  "confianca": 0.99
+ },
+ "CV000041": {
+  "categoria": "onde_esta_pedido",
+  "categoria_secundaria": null,
+  "order_id": "PED000029",
+  "sinais_risco": [],
+  "confianca": 0.98
+ },
+ "CV000042": {
+  "categoria": "atraso_entrega",
+  "categoria_secundaria": null,
+  "order_id": null,
+  "sinais_risco": [
+   "cliente_irritado"
+  ],
+  "confianca": 0.98
+ },
+ "CV000043": {
+  "categoria": "item_faltante",
+  "categoria_secundaria": null,
+  "order_id": "PED000028",
+  "sinais_risco": [
+   "cliente_irritado"
+  ],
+  "confianca": 0.99
+ },
+ "CV000044": {
+  "categoria": "duvida_produto",
+  "categoria_secundaria": null,
+  "order_id": null,
+  "sinais_risco": [],
+  "confianca": 0.99
+ },
+ "CV000045": {
+  "categoria": "atraso_entrega",
+  "categoria_secundaria": null,
+  "order_id": "PED000043",
+  "sinais_risco": [],
+  "confianca": 0.99
+ },
+ "CV000046": {
+  "categoria": "avaria_vazamento",
+  "categoria_secundaria": null,
+  "order_id": null,
+  "sinais_risco": [
+   "cliente_irritado"
+  ],
+  "confianca": 0.97
+ },
+ "CV000047": {
+  "categoria": "pagamento_pendente",
+  "categoria_secundaria": null,
+  "order_id": "PED000037",
+  "sinais_risco": [],
+  "confianca": 0.99
+ },
+ "CV000048": {
+  "categoria": "cupom_promocao",
+  "categoria_secundaria": null,
+  "order_id": null,
+  "sinais_risco": [
+   "dado_sensivel",
+   "sem_politica_aplicavel"
+  ],
+  "confianca": 0.96
+ },
+ "CV000049": {
+  "categoria": "atraso_entrega",
+  "categoria_secundaria": null,
+  "order_id": "PED000008",
+  "sinais_risco": [
+   "cliente_irritado"
+  ],
+  "confianca": 0.99
+ },
+ "CV000050": {
+  "categoria": "duvida_produto",
+  "categoria_secundaria": null,
+  "order_id": null,
+  "sinais_risco": [],
+  "confianca": 0.99
+ },
+ "CV000051": {
+  "categoria": "cobranca_duplicada",
+  "categoria_secundaria": null,
+  "order_id": "PED000035",
+  "sinais_risco": [],
+  "confianca": 0.99
+ },
+ "CV000052": {
+  "categoria": "troca_fragrancia",
+  "categoria_secundaria": null,
+  "order_id": null,
+  "sinais_risco": [],
+  "confianca": 0.99
+ },
+ "CV000053": {
+  "categoria": "duvida_produto",
+  "categoria_secundaria": null,
+  "order_id": "PED000049",
+  "sinais_risco": [],
+  "confianca": 0.99
+ },
+ "CV000054": {
+  "categoria": "item_faltante",
+  "categoria_secundaria": null,
+  "order_id": "PED000009",
+  "sinais_risco": [
+   "cliente_irritado"
+  ],
+  "confianca": 0.99
+ },
+ "CV000055": {
+  "categoria": "duvida_produto",
+  "categoria_secundaria": null,
+  "order_id": "PED000007",
+  "sinais_risco": [],
+  "confianca": 0.99
+ },
+ "CV000056": {
+  "categoria": "item_faltante",
+  "categoria_secundaria": null,
+  "order_id": "PED000016",
+  "sinais_risco": [],
+  "confianca": 1
+ },
+ "CV000057": {
+  "categoria": "item_faltante",
+  "categoria_secundaria": null,
+  "order_id": "PED000014",
+  "sinais_risco": [],
+  "confianca": 0.99
+ },
+ "CV000058": {
+  "categoria": "pagamento_pendente",
+  "categoria_secundaria": null,
+  "order_id": null,
+  "sinais_risco": [],
+  "confianca": 0.99
+ },
+ "CV000059": {
+  "categoria": "erro_personalizacao",
+  "categoria_secundaria": null,
+  "order_id": null,
+  "sinais_risco": [
+   "cliente_irritado"
+  ],
+  "confianca": 0.98
+ },
+ "CV000060": {
+  "categoria": "cupom_promocao",
+  "categoria_secundaria": null,
+  "order_id": null,
+  "sinais_risco": [],
+  "confianca": 0.96
+ },
+ "CV000061": {
+  "categoria": "cupom_promocao",
+  "categoria_secundaria": null,
+  "order_id": "PED000050",
+  "sinais_risco": [],
+  "confianca": 0.99
+ },
+ "CV000062": {
+  "categoria": "atraso_entrega",
+  "categoria_secundaria": null,
+  "order_id": "PED000019",
+  "sinais_risco": [
+   "cliente_irritado"
+  ],
+  "confianca": 0.99
+ },
+ "CV000063": {
+  "categoria": "onde_esta_pedido",
+  "categoria_secundaria": "duvida_produto",
+  "order_id": "PED000032",
+  "sinais_risco": [],
+  "confianca": 0.98
+ },
+ "CV000064": {
+  "categoria": "item_faltante",
+  "categoria_secundaria": null,
+  "order_id": "PED000027",
+  "sinais_risco": [],
+  "confianca": 0.99
+ },
+ "CV000065": {
+  "categoria": "avaria_vazamento",
+  "categoria_secundaria": null,
+  "order_id": null,
+  "sinais_risco": [],
+  "confianca": 0.99
+ },
+ "CV000066": {
+  "categoria": "cupom_promocao",
+  "categoria_secundaria": "duvida_produto",
+  "order_id": null,
+  "sinais_risco": [],
+  "confianca": 0.96
+ },
+ "CV000067": {
+  "categoria": "onde_esta_pedido",
+  "categoria_secundaria": null,
+  "order_id": "PED000034",
+  "sinais_risco": [],
+  "confianca": 0.96
+ },
+ "CV000068": {
+  "categoria": "atraso_entrega",
+  "categoria_secundaria": null,
+  "order_id": null,
+  "sinais_risco": [
+   "cliente_irritado"
+  ],
+  "confianca": 0.99
+ },
+ "CV000069": {
+  "categoria": "arrependimento_cancelamento",
+  "categoria_secundaria": null,
+  "order_id": null,
+  "sinais_risco": [
+   "dado_sensivel"
+  ],
+  "confianca": 0.98
+ },
+ "CV000070": {
+  "categoria": "atraso_entrega",
+  "categoria_secundaria": null,
+  "order_id": "PED000046",
+  "sinais_risco": [],
+  "confianca": 0.98
+ },
+ "CV000071": {
+  "categoria": "avaria_vazamento",
+  "categoria_secundaria": null,
+  "order_id": null,
+  "sinais_risco": [],
+  "confianca": 0.99
+ }
+}

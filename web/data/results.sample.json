@@ -1,0 +1,218 @@
+{
+  "versao": 1,
+  "gerado_em": "2026-11-02 08:00",
+  "resumo": {"total": 8, "automaticas": 5, "aprovacao": 1, "pessoa": 1, "supervisor": 1},
+  "itens": [
+    {
+      "alias": "CONV-901",
+      "canal": "reclame_aqui",
+      "marca_grupo": "Modaviva",
+      "prioridade": 1,
+      "categoria": "atraso_entrega",
+      "categoria_secundaria": null,
+      "acao": "abrir_chamado_transportadora",
+      "destino": "automatico",
+      "acoes_secundarias": ["informar_status"],
+      "motivo": "Pedido passou da data prometida há 3 dias úteis; a política manda abrir chamado até 7 dias úteis de atraso.",
+      "regra": "atraso_entrega",
+      "dados": [
+        {"rotulo": "Status do pedido", "valor": "em_transito"},
+        {"rotulo": "Data prometida", "valor": "2026-10-28"},
+        {"rotulo": "Dias úteis de atraso", "valor": "3"},
+        {"rotulo": "Limite para reenvio (dias úteis)", "valor": "7"}
+      ],
+      "evidencias": [],
+      "resposta_cliente": "Abrimos um chamado com a transportadora para localizar seu pedido e voltamos com a atualização em até 2 dias úteis.",
+      "log": [
+        {"etapa": "mascarar", "resultado": "ok", "ms": 2},
+        {"etapa": "classificar", "resultado": "atraso_entrega (confiança 0,91)", "ms": 1840},
+        {"etapa": "consultar_pedido", "resultado": "em_transito, prometido 2026-10-28", "ms": 4},
+        {"etapa": "decidir", "resultado": "abrir_chamado_transportadora", "ms": 1}
+      ]
+    },
+    {
+      "alias": "CONV-902",
+      "canal": "whatsapp",
+      "marca_grupo": "Belleza",
+      "prioridade": 2,
+      "categoria": "reacao_adversa",
+      "categoria_secundaria": null,
+      "acao": "acionar_pessoa",
+      "destino": "pessoa",
+      "acoes_secundarias": ["orientar_suspensao_uso", "registrar_cosmetovigilancia"],
+      "motivo": "Relato de reação após uso do produto. Caso sensível: orientar suspensão de uso e o registro de cosmetovigilância é do supervisor.",
+      "regra": "reacao_adversa",
+      "dados": [
+        {"rotulo": "Status do pedido", "valor": "entregue"},
+        {"rotulo": "Lote registrado", "valor": "sim"},
+        {"rotulo": "Dias desde a entrega", "valor": "5"}
+      ],
+      "evidencias": [],
+      "resposta_cliente": "Por favor, suspenda o uso do produto. Uma pessoa da nossa equipe vai falar com você ainda hoje.",
+      "log": [
+        {"etapa": "mascarar", "resultado": "ok", "ms": 2},
+        {"etapa": "classificar", "resultado": "reacao_adversa (confiança 0,95)", "ms": 1712},
+        {"etapa": "consultar_pedido", "resultado": "entregue", "ms": 3},
+        {"etapa": "decidir", "resultado": "acionar_pessoa (precedência 1: sensível)", "ms": 1}
+      ]
+    },
+    {
+      "alias": "CONV-903",
+      "canal": "email",
+      "marca_grupo": "Modaviva",
+      "prioridade": 3,
+      "categoria": "cobranca_duplicada",
+      "categoria_secundaria": null,
+      "acao": "solicitar_aprovacao",
+      "destino": "aprovacao",
+      "acoes_secundarias": ["reembolsar"],
+      "motivo": "Duas transações do mesmo pedido com o mesmo valor. O estorno de R$ 118,80 passa do limite do atendente (R$ 100,00).",
+      "regra": "cobranca_duplicada",
+      "dados": [
+        {"rotulo": "Transações cobradas", "valor": "2"},
+        {"rotulo": "Valor do estorno", "valor": "R$ 118,80"},
+        {"rotulo": "Limite do atendente", "valor": "R$ 100,00"}
+      ],
+      "evidencias": [],
+      "resposta_cliente": "Identificamos a cobrança em duplicidade. O estorno está em aprovação e avisamos assim que for concluído.",
+      "log": [
+        {"etapa": "mascarar", "resultado": "ok", "ms": 2},
+        {"etapa": "classificar", "resultado": "cobranca_duplicada (confiança 0,88)", "ms": 1655},
+        {"etapa": "consultar_pagamento", "resultado": "2 transações capturadas", "ms": 5},
+        {"etapa": "decidir", "resultado": "solicitar_aprovacao (acima da alçada)", "ms": 1}
+      ]
+    },
+    {
+      "alias": "CONV-904",
+      "canal": "email",
+      "marca_grupo": "Modaviva",
+      "prioridade": 4,
+      "categoria": "avaria_vazamento",
+      "categoria_secundaria": null,
+      "acao": "sinalizar_suspeita",
+      "destino": "supervisor",
+      "acoes_secundarias": [],
+      "motivo": "A foto enviada tem sinais que precisam de conferência humana. Nenhuma ação financeira até a decisão do supervisor.",
+      "regra": "reclamacao_suspeita",
+      "dados": [
+        {"rotulo": "Status do pedido", "valor": "entregue"},
+        {"rotulo": "Data do pedido", "valor": "2026-10-20"},
+        {"rotulo": "Valor do pedido", "valor": "R$ 149,90"}
+      ],
+      "evidencias": [
+        {"tipo": "hash_repetido", "detalhe": "A mesma imagem (hash perceptual) aparece em anexo de outro pedido."},
+        {"tipo": "exif_fora_da_janela", "detalhe": "Data de captura da foto (2026-10-02) anterior à data do pedido (2026-10-20)."}
+      ],
+      "resposta_cliente": null,
+      "log": [
+        {"etapa": "mascarar", "resultado": "ok", "ms": 2},
+        {"etapa": "classificar", "resultado": "avaria_vazamento (confiança 0,90)", "ms": 1790},
+        {"etapa": "ver_anexos", "resultado": "1 anexo, 2 sinais fortes", "ms": 9},
+        {"etapa": "decidir", "resultado": "sinalizar_suspeita (precedência 2)", "ms": 1}
+      ]
+    },
+    {
+      "alias": "CONV-905",
+      "canal": "whatsapp",
+      "marca_grupo": "Modaviva",
+      "prioridade": 5,
+      "categoria": "avaria_vazamento",
+      "categoria_secundaria": null,
+      "acao": "solicitar_foto",
+      "destino": "automatico",
+      "acoes_secundarias": [],
+      "motivo": "A política exige foto para reenvio por avaria e não há anexo no pedido. Recebido há 2 dias, dentro do prazo de 7.",
+      "regra": "avaria_vazamento",
+      "dados": [
+        {"rotulo": "Status do pedido", "valor": "entregue"},
+        {"rotulo": "Dias desde a entrega", "valor": "2"},
+        {"rotulo": "Prazo da política (dias corridos)", "valor": "7"},
+        {"rotulo": "Anexos no pedido", "valor": "0"}
+      ],
+      "evidencias": [],
+      "resposta_cliente": "Sentimos muito pelo ocorrido. Pode nos enviar uma foto do produto e da embalagem para seguirmos com o reenvio?",
+      "log": [
+        {"etapa": "mascarar", "resultado": "ok", "ms": 1},
+        {"etapa": "classificar", "resultado": "avaria_vazamento (confiança 0,93)", "ms": 1603},
+        {"etapa": "ver_anexos", "resultado": "nenhum anexo", "ms": 3},
+        {"etapa": "decidir", "resultado": "solicitar_foto (precedência 4)", "ms": 1}
+      ]
+    },
+    {
+      "alias": "CONV-906",
+      "canal": "whatsapp",
+      "marca_grupo": "Belleza",
+      "prioridade": 6,
+      "categoria": "onde_esta_pedido",
+      "categoria_secundaria": null,
+      "acao": "informar_status",
+      "destino": "automatico",
+      "acoes_secundarias": [],
+      "motivo": "Pedido dentro do prazo prometido e com movimentação recente no rastreio.",
+      "regra": "onde_esta_pedido",
+      "dados": [
+        {"rotulo": "Status do pedido", "valor": "em_transito"},
+        {"rotulo": "Data prometida", "valor": "2026-11-05"},
+        {"rotulo": "Dias úteis sem movimentação", "valor": "1"}
+      ],
+      "evidencias": [],
+      "resposta_cliente": "Seu pedido está a caminho e a previsão de entrega é 05/11.",
+      "log": [
+        {"etapa": "mascarar", "resultado": "ok", "ms": 1},
+        {"etapa": "classificar", "resultado": "onde_esta_pedido (confiança 0,97)", "ms": 1488},
+        {"etapa": "consultar_pedido", "resultado": "em_transito, prometido 2026-11-05", "ms": 4},
+        {"etapa": "decidir", "resultado": "informar_status", "ms": 1}
+      ]
+    },
+    {
+      "alias": "CONV-907",
+      "canal": "email",
+      "marca_grupo": "Belleza",
+      "prioridade": 7,
+      "categoria": "troca_fragrancia",
+      "categoria_secundaria": null,
+      "acao": "negar_por_politica",
+      "destino": "automatico",
+      "acoes_secundarias": [],
+      "motivo": "Pedido de troca 41 dias após o recebimento; a política permite troca de fragrância em até 30 dias.",
+      "regra": "troca_fragrancia",
+      "dados": [
+        {"rotulo": "Dias desde a entrega", "valor": "41"},
+        {"rotulo": "Prazo da política (dias corridos)", "valor": "30"}
+      ],
+      "evidencias": [],
+      "resposta_cliente": "A troca de fragrância vale por até 30 dias após o recebimento, e esse prazo já passou para este pedido.",
+      "log": [
+        {"etapa": "mascarar", "resultado": "ok", "ms": 1},
+        {"etapa": "classificar", "resultado": "troca_fragrancia (confiança 0,89)", "ms": 1530},
+        {"etapa": "consultar_pedido", "resultado": "entregue há 41 dias", "ms": 3},
+        {"etapa": "decidir", "resultado": "negar_por_politica (precedência 3: fora do prazo)", "ms": 1}
+      ]
+    },
+    {
+      "alias": "CONV-908",
+      "canal": "whatsapp",
+      "marca_grupo": "Modaviva",
+      "prioridade": 8,
+      "categoria": "alteracao_endereco",
+      "categoria_secundaria": null,
+      "acao": "alterar_endereco",
+      "destino": "automatico",
+      "acoes_secundarias": [],
+      "motivo": "Pedido ainda não separado; a política permite alterar o endereço antes da separação.",
+      "regra": "alteracao_endereco",
+      "dados": [
+        {"rotulo": "Status do pedido", "valor": "pagamento_aprovado"},
+        {"rotulo": "Separado", "valor": "não"}
+      ],
+      "evidencias": [],
+      "resposta_cliente": "Endereço atualizado. O pedido segue para separação com o novo endereço.",
+      "log": [
+        {"etapa": "mascarar", "resultado": "ok", "ms": 1},
+        {"etapa": "classificar", "resultado": "alteracao_endereco (confiança 0,94)", "ms": 1502},
+        {"etapa": "consultar_pedido", "resultado": "pagamento_aprovado", "ms": 3},
+        {"etapa": "decidir", "resultado": "alterar_endereco", "ms": 1}
+      ]
+    }
+  ]
+}

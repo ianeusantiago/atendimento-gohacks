@@ -1,0 +1,105 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "resultado_publico.schema.json",
+  "title": "Resultado público da triagem (contrato v1)",
+  "description": "Arquivo publicado em web/data/results.json. Só campos derivados e mascarados: nenhum CPF, cartão, telefone ou texto livre de cliente.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["versao", "gerado_em", "resumo", "itens"],
+  "properties": {
+    "versao": {"const": 1},
+    "gerado_em": {
+      "type": "string",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}$"
+    },
+    "tempo_referencia": {
+      "description": "Opcional. Média histórica de minutos trabalhados por conversa, de tempo_por_conversa.csv.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["media_minutos", "conversas", "fonte"],
+      "properties": {
+        "media_minutos": {"type": "number", "minimum": 0},
+        "conversas": {"type": "integer", "minimum": 1},
+        "fonte": {"type": "string"}
+      }
+    },
+    "resumo": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["total", "automaticas", "aprovacao", "pessoa", "supervisor"],
+      "properties": {
+        "total": {"type": "integer", "minimum": 0},
+        "automaticas": {"type": "integer", "minimum": 0},
+        "aprovacao": {"type": "integer", "minimum": 0},
+        "pessoa": {"type": "integer", "minimum": 0},
+        "supervisor": {"type": "integer", "minimum": 0}
+      }
+    },
+    "itens": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/item"}
+    }
+  },
+  "$defs": {
+    "item": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "alias", "canal", "marca_grupo", "prioridade", "categoria", "categoria_secundaria",
+        "acao", "destino", "acoes_secundarias", "motivo", "regra", "dados", "evidencias",
+        "resposta_cliente", "log"
+      ],
+      "properties": {
+        "alias": {"type": "string", "pattern": "^CONV-[0-9]{3,}$"},
+        "canal": {"enum": ["whatsapp", "email", "reclame_aqui"]},
+        "marca_grupo": {"enum": ["Modaviva", "Belleza"]},
+        "prioridade": {"type": "integer", "minimum": 1},
+        "categoria": {"type": "string", "minLength": 1},
+        "categoria_secundaria": {"type": ["string", "null"]},
+        "acao": {"type": "string", "minLength": 1},
+        "destino": {"enum": ["automatico", "aprovacao", "pessoa", "supervisor"]},
+        "acoes_secundarias": {"type": "array", "items": {"type": "string", "minLength": 1}},
+        "motivo": {"type": "string", "minLength": 1},
+        "regra": {"type": "string", "minLength": 1},
+        "dados": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["rotulo", "valor"],
+            "properties": {
+              "rotulo": {"type": "string", "minLength": 1},
+              "valor": {"type": "string"}
+            }
+          }
+        },
+        "evidencias": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["tipo", "detalhe"],
+            "properties": {
+              "tipo": {"type": "string", "minLength": 1},
+              "detalhe": {"type": "string"}
+            }
+          }
+        },
+        "resposta_cliente": {"type": ["string", "null"]},
+        "log": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["etapa", "resultado", "ms"],
+            "properties": {
+              "etapa": {"type": "string", "minLength": 1},
+              "resultado": {"type": "string"},
+              "ms": {"type": "number", "minimum": 0}
+            }
+          }
+        }
+      }
+    }
+  }
+}

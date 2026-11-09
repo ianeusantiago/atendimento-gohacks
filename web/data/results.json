@@ -1,0 +1,4220 @@
+{
+ "versao": 1,
+ "gerado_em": "2026-11-02 08:00",
+ "resumo": {
+  "total": 65,
+  "automaticas": 59,
+  "aprovacao": 3,
+  "pessoa": 3,
+  "supervisor": 0
+ },
+ "itens": [
+  {
+   "alias": "CONV-001",
+   "canal": "reclame_aqui",
+   "marca_grupo": "Belleza",
+   "prioridade": 1,
+   "categoria": "reacao_adversa",
+   "categoria_secundaria": null,
+   "acao": "acionar_pessoa",
+   "destino": "pessoa",
+   "acoes_secundarias": [
+    "orientar_suspensao_uso",
+    "registrar_cosmetovigilancia"
+   ],
+   "motivo": "Relato de reação adversa: orientar a suspensão do uso e registrar em cosmetovigilância em até 24 h; o registro é do supervisor.",
+   "regra": "reacao_adversa",
+   "dados": [
+    {
+     "rotulo": "Status do pedido",
+     "valor": "entregue"
+    },
+    {
+     "rotulo": "Valor do pedido",
+     "valor": "R$ 138,80"
+    },
+    {
+     "rotulo": "Dias desde a entrega",
+     "valor": "7"
+    },
+    {
+     "rotulo": "SLA de primeira resposta",
+     "valor": "1622 min restantes"
+    }
+   ],
+   "evidencias": [],
+   "resposta_cliente": "Olá! Por segurança, suspenda o uso do produto e, se necessário, procure atendimento médico. O seu relato foi encaminhado à equipe responsável, que vai acompanhar o caso com você.",
+   "log": [
+    {
+     "etapa": "mascarar",
+     "resultado": "ok",
+     "ms": 0.0
+    },
+    {
+     "etapa": "classificar",
+     "resultado": "reacao_adversa (confiança 0,99)",
+     "ms": 0.0
+    },
+    {
+     "etapa": "consultar_pedido",
+     "resultado": "entregue",
+     "ms": 0.2
+    },
+    {
+     "etapa": "decidir",
+     "resultado": "orientar_suspensao_uso;registrar_cosmetovigilancia",
+     "ms": 0.0
+    },
+    {
+     "etapa": "executar",
+     "resultado": "2 executadas, 1 pendentes",
+     "ms": 0.1
+    }
+   ]
+  },
+  {
+   "alias": "CONV-002",
+   "canal": "reclame_aqui",
+   "marca_grupo": "Belleza",
+   "prioridade": 2,
+   "categoria": "item_faltante",
+   "categoria_secundaria": null,
+   "acao": "solicitar_foto",
+   "destino": "automatico",
+   "acoes_secundarias": [],
+   "motivo": "A política exige foto para esta reclamação.",
+   "regra": "item_faltante",
+   "dados": [
+    {
+     "rotulo": "Status do pedido",
+     "valor": "entregue"
+    },
+    {
+     "rotulo": "Valor do pedido",
+     "valor": "R$ 219,80"
+    },
+    {
+     "rotulo": "Dias desde a entrega",
+     "valor": "5"
+    },
+    {
+     "rotulo": "Prazo da política (dias corridos)",
+     "valor": "7"
+    },
+    {
+     "rotulo": "Fotos no pedido (inclui outras conversas)",
+     "valor": "0"
+    },
+    {
+     "rotulo": "SLA de primeira resposta",
+     "valor": "724 min restantes"
+    }
+   ],
+   "evidencias": [],
+   "resposta_cliente": "Olá! Para darmos andamento, por favor envie uma foto do produto e da embalagem do pedido PED-001.",
+   "log": [
+    {
+     "etapa": "mascarar",
+     "resultado": "ok",
+     "ms": 0.0
+    },
+    {
+     "etapa": "classificar",
+     "resultado": "item_faltante (confiança 0,99)",
+     "ms": 0.0
+    },
+    {
+     "etapa": "consultar_pedido",
+     "resultado": "entregue",
+     "ms": 0.2
+    },
+    {
+     "etapa": "decidir",
+     "resultado": "solicitar_foto",
+     "ms": 0.0
+    },
+    {
+     "etapa": "executar",
+     "resultado": "1 executadas, 0 pendentes",
+     "ms": 0.0
+    }
+   ]
+  },
+  {
+   "alias": "CONV-003",
+   "canal": "reclame_aqui",
+   "marca_grupo": "Belleza",
+   "prioridade": 3,
+   "categoria": "atraso_entrega",
+   "categoria_secundaria": null,
+   "acao": "abrir_chamado_transportadora",
+   "destino": "automatico",
+   "acoes_secundarias": [],
+   "motivo": "Pedido não entregue, atraso de 3 dias úteis em relação a 2026-10-27.",
+   "regra": "atraso_entrega",
+   "dados": [
+    {
+     "rotulo": "Status do pedido",
+     "valor": "em_transito"
+    },
+    {
+     "rotulo": "Valor do pedido",
+     "valor": "R$ 102,80"
+    },
+    {
+     "rotulo": "Data prometida",
+     "valor": "2026-10-27"
+    },
+    {
+     "rotulo": "Dias úteis de atraso",
+     "valor": "3"
+    },
+    {
+     "rotulo": "Dias úteis sem movimento no rastreio",
+     "valor": "6"
+    },
+    {
+     "rotulo": "SLA de primeira resposta",
+     "valor": "808 min restantes"
+    }
+   ],
+   "evidencias": [],
+   "resposta_cliente": "Olá! Abrimos um chamado com a transportadora Expressa Já sobre o pedido PED-002, que tinha previsão de entrega para 27/10/2026. Assim que tivermos o retorno, avisamos você por aqui.",
+   "log": [
+    {
+     "etapa": "mascarar",
+     "resultado": "ok",
+     "ms": 0.3
+    },
+    {
+     "etapa": "classificar",
+     "resultado": "atraso_entrega (confiança 0,99)",
+     "ms": 0.0
+    },
+    {
+     "etapa": "consultar_pedido",
+     "resultado": "em_transito",
+     "ms": 0.3
+    },
+    {
+     "etapa": "decidir",
+     "resultado": "abrir_chamado_transportadora",
+     "ms": 0.0
+    },
+    {
+     "etapa": "executar",
+     "resultado": "2 executadas, 0 pendentes",
+     "ms": 0.1
+    }
+   ]
+  },
+  {
+   "alias": "CONV-004",
+   "canal": "reclame_aqui",
+   "marca_grupo": "Belleza",
+   "prioridade": 4,
+   "categoria": "arrependimento_cancelamento",
+   "categoria_secundaria": null,
+   "acao": "solicitar_aprovacao",
+   "destino": "aprovacao",
+   "acoes_secundarias": [
+    "reembolsar"
+   ],
+   "motivo": "Arrependimento em 7 dias do recebimento. Valor R$ 155.81 acima do limite do atendente (R$ 100.00): aprovação do supervisor.",
+   "regra": "arrependimento_cancelamento",
+   "dados": [
+    {
+     "rotulo": "Status do pedido",
+     "valor": "entregue"
+    },
+    {
+     "rotulo": "Valor do pedido",
+     "valor": "R$ 155,81"
+    },
+    {
+     "rotulo": "Dias desde a entrega",
+     "valor": "7"
+    },
+    {
+     "rotulo": "Prazo da política (dias corridos)",
+     "valor": "7"
+    },
+    {
+     "rotulo": "Pedido separado",
+     "valor": "sim"
+    },
+    {
+     "rotulo": "Limite do atendente",
+     "valor": "R$ 100,00"
+    },
+    {
+     "rotulo": "SLA de primeira resposta",
+     "valor": "881 min restantes"
+    }
+   ],
+   "evidencias": [],
+   "resposta_cliente": "Olá! Encaminhamos o reembolso do pedido PED-003 para aprovação interna, pois o valor passa do limite de aprovação do atendimento. Retornaremos por aqui assim que houver uma posição.",
+   "log": [
+    {
+     "etapa": "mascarar",
+     "resultado": "ok",
+     "ms": 0.0
+    },
+    {
+     "etapa": "classificar",
+     "resultado": "arrependimento_cancelamento (confiança 0,99)",
+     "ms": 0.0
+    },
+    {
+     "etapa": "consultar_pedido",
+     "resultado": "entregue",
+     "ms": 0.3
+    },
+    {
+     "etapa": "decidir",
+     "resultado": "solicitar_aprovacao",
+     "ms": 0.0
+    },
+    {
+     "etapa": "executar",
+     "resultado": "2 executadas, 0 pendentes",
+     "ms": 0.1
+    }
+   ]
+  },
+  {
+   "alias": "CONV-005",
+   "canal": "reclame_aqui",
+   "marca_grupo": "Modaviva",
+   "prioridade": 5,
+   "categoria": "onde_esta_pedido",
+   "categoria_secundaria": null,
+   "acao": "informar_status",
+   "destino": "automatico",
+   "acoes_secundarias": [],
+   "motivo": "Informar status e previsão do pedido.",
+   "regra": "onde_esta_pedido",
+   "dados": [
+    {
+     "rotulo": "Status do pedido",
+     "valor": "em_transito"
+    },
+    {
+     "rotulo": "Valor do pedido",
+     "valor": "R$ 102,80"
+    },
+    {
+     "rotulo": "Data prometida",
+     "valor": "2026-11-04"
+    },
+    {
+     "rotulo": "Dias úteis sem movimento no rastreio",
+     "valor": "1"
+    },
+    {
+     "rotulo": "SLA de primeira resposta",
+     "valor": "885 min restantes"
+    }
+   ],
+   "evidencias": [],
+   "resposta_cliente": "Olá! Seu pedido PED-004 está em trânsito, com a transportadora Expressa Já. A previsão de entrega é 04/11/2026.",
+   "log": [
+    {
+     "etapa": "mascarar",
+     "resultado": "ok",
+     "ms": 0.0
+    },
+    {
+     "etapa": "classificar",
+     "resultado": "onde_esta_pedido (confiança 0,97)",
+     "ms": 0.0
+    },
+    {
+     "etapa": "consultar_pedido",
+     "resultado": "em_transito",
+     "ms": 0.2
+    },
+    {
+     "etapa": "decidir",
+     "resultado": "informar_status",
+     "ms": 0.0
+    },
+    {
+     "etapa": "executar",
+     "resultado": "1 executadas, 0 pendentes",
+     "ms": 0.0
+    }
+   ]
+  },
+  {
+   "alias": "CONV-006",
+   "canal": "reclame_aqui",
+   "marca_grupo": "Modaviva",
+   "prioridade": 6,
+   "categoria": "erro_personalizacao",
+   "categoria_secundaria": null,
+   "acao": "reimprimir_personalizacao",
+   "destino": "automatico",
+   "acoes_secundarias": [],
+   "motivo": "Foto coerente com o pedido, recebido há 6 dias (prazo 7). Valor dentro do limite do atendente (R$ 200.00).",
+   "regra": "erro_personalizacao",
+   "dados": [
+    {
+     "rotulo": "Status do pedido",
+     "valor": "entregue"
+    },
+    {
+     "rotulo": "Valor do pedido",
+     "valor": "R$ 108,80"
+    },
+    {
+     "rotulo": "Dias desde a entrega",
+     "valor": "6"
+    },
+    {
+     "rotulo": "Prazo da política (dias corridos)",
+     "valor": "7"
+    },
+    {
+     "rotulo": "Fotos no pedido (inclui outras conversas)",
+     "valor": "1"
+    },
+    {
+     "rotulo": "Limite do atendente",
+     "valor": "R$ 200,00"
+    },
+    {
+     "rotulo": "SLA de primeira resposta",
+     "valor": "924 min restantes"
+    }
+   ],
+   "evidencias": [],
+   "resposta_cliente": "Olá! Registramos a nova produção sem custo do pedido PED-005. Avisaremos por aqui quando o envio sair.",
+   "log": [
+    {
+     "etapa": "mascarar",
+     "resultado": "ok",
+     "ms": 0.0
+    },
+    {
+     "etapa": "classificar",
+     "resultado": "erro_personalizacao (confiança 0,98)",
+     "ms": 0.0
+    },
+    {
+     "etapa": "consultar_pedido",
+     "resultado": "entregue",
+     "ms": 0.2
+    },
+    {
+     "etapa": "decidir",
+     "resultado": "reimprimir_personalizacao",
+     "ms": 1.3
+    },
+    {
+     "etapa": "executar",
+     "resultado": "2 executadas, 0 pendentes",
+     "ms": 0.1
+    }
+   ]
+  },
+  {
+   "alias": "CONV-007",
+   "canal": "reclame_aqui",
+   "marca_grupo": "Belleza",
+   "prioridade": 7,
+   "categoria": "atraso_entrega",
+   "categoria_secundaria": null,
+   "acao": "reenviar_produto",
+   "destino": "automatico",
+   "acoes_secundarias": [],
+   "motivo": "Pedido não entregue, atraso de 9 dias úteis (limite de 7 dias úteis); reenvio; reembolso acima de R$ 100.00 exige aprovação do supervisor. Valor dentro do limite do atendente (R$ 200.00).",
+   "regra": "atraso_entrega",
+   "dados": [
+    {
+     "rotulo": "Status do pedido",
+     "valor": "em_transito"
+    },
+    {
+     "rotulo": "Valor do pedido",
+     "valor": "R$ 142,31"
+    },
+    {
+     "rotulo": "Data prometida",
+     "valor": "2026-10-19"
+    },
+    {
+     "rotulo": "Dias úteis de atraso",
+     "valor": "9"
+    },
+    {
+     "rotulo": "Dias úteis sem movimento no rastreio",
+     "valor": "5"
+    },
+    {
+     "rotulo": "Limite do atendente",
+     "valor": "R$ 200,00"
+    },
+    {
+     "rotulo": "SLA de primeira resposta",
+     "valor": "1449 min restantes"
+    }
+   ],
+   "evidencias": [],
+   "resposta_cliente": "Olá! Pedimos desculpas pelo atraso do pedido PED-006. Podemos reenviar o produto sem custo. Se preferir o reembolso, ele passa por aprovação interna. Responda por aqui como prefere seguir.",
+   "log": [
+    {
+     "etapa": "mascarar",
+     "resultado": "ok",
+     "ms": 0.0
+    },
+    {
+     "etapa": "classificar",
+     "resultado": "atraso_entrega (confiança 0,99)",
+     "ms": 0.0
+    },
+    {
+     "etapa": "consultar_pedido",
+     "resultado": "em_transito",
+     "ms": 0.2
+    },
+    {
+     "etapa": "decidir",
+     "resultado": "reenviar_produto",
+     "ms": 0.0
+    },
+    {
+     "etapa": "executar",
+     "resultado": "1 executadas, 1 pendentes",
+     "ms": 0.0
+    }
+   ]
+  },
+  {
+   "alias": "CONV-008",
+   "canal": "reclame_aqui",
+   "marca_grupo": "Belleza",
+   "prioridade": 8,
+   "categoria": "avaria_vazamento",
+   "categoria_secundaria": null,
+   "acao": "solicitar_foto",
+   "destino": "automatico",
+   "acoes_secundarias": [],
+   "motivo": "A política exige foto para esta reclamação.",
+   "regra": "avaria_vazamento",
+   "dados": [
+    {
+     "rotulo": "Status do pedido",
+     "valor": "entregue"
+    },
+    {
+     "rotulo": "Valor do pedido",
+     "valor": "R$ 102,81"
+    },
+    {
+     "rotulo": "Dias desde a entrega",
+     "valor": "4"
+    },
+    {
+     "rotulo": "Prazo da política (dias corridos)",
+     "valor": "7"
+    },
+    {
+     "rotulo": "Fotos no pedido (inclui outras conversas)",
+     "valor": "0"
+    },
+    {
+     "rotulo": "SLA de primeira resposta",
+     "valor": "1562 min restantes"
+    }
+   ],
+   "evidencias": [],
+   "resposta_cliente": "Olá! Para darmos andamento, por favor envie uma foto do produto e da embalagem do pedido PED-007.",
+   "log": [
+    {
+     "etapa": "mascarar",
+     "resultado": "ok",
+     "ms": 0.0
+    },
+    {
+     "etapa": "classificar",
+     "resultado": "avaria_vazamento (confiança 0,99)",
+     "ms": 0.0
+    },
+    {
+     "etapa": "consultar_pedido",
+     "resultado": "entregue",
+     "ms": 0.2
+    },
+    {
+     "etapa": "decidir",
+     "resultado": "solicitar_foto",
+     "ms": 0.0
+    },
+    {
+     "etapa": "executar",
+     "resultado": "1 executadas, 0 pendentes",
+     "ms": 0.0
+    }
+   ]
+  },
+  {
+   "alias": "CONV-009",
+   "canal": "reclame_aqui",
+   "marca_grupo": "Belleza",
+   "prioridade": 9,
+   "categoria": "atraso_entrega",
+   "categoria_secundaria": null,
+   "acao": "abrir_chamado_transportadora",
+   "destino": "automatico",
+   "acoes_secundarias": [],
+   "motivo": "Pedido não entregue, atraso de 7 dias úteis em relação a 2026-10-21.",
+   "regra": "atraso_entrega",
+   "dados": [
+    {
+     "rotulo": "Status do pedido",
+     "valor": "em_transito"
+    },
+    {
+     "rotulo": "Valor do pedido",
+     "valor": "R$ 249,90"
+    },
+    {
+     "rotulo": "Data prometida",
+     "valor": "2026-10-21"
+    },
+    {
+     "rotulo": "Dias úteis de atraso",
+     "valor": "7"
+    },
+    {
+     "rotulo": "Dias úteis sem movimento no rastreio",
+     "valor": "0"
+    },
+    {
+     "rotulo": "SLA de primeira resposta",
+     "valor": "1586 min restantes"
+    }
+   ],
+   "evidencias": [],
+   "resposta_cliente": "Olá! Abrimos um chamado com a transportadora TransLeste sobre o pedido PED-008, que tinha previsão de entrega para 21/10/2026. Assim que tivermos o retorno, avisamos você por aqui.",
+   "log": [
+    {
+     "etapa": "mascarar",
+     "resultado": "ok",
+     "ms": 0.0
+    },
+    {
+     "etapa": "classificar",
+     "resultado": "atraso_entrega (confiança 0,99)",
+     "ms": 0.0
+    },
+    {
+     "etapa": "consultar_pedido",
+     "resultado": "em_transito",
+     "ms": 0.2
+    },
+    {
+     "etapa": "decidir",
+     "resultado": "abrir_chamado_transportadora",
+     "ms": 0.0
+    },
+    {
+     "etapa": "executar",
+     "resultado": "2 executadas, 0 pendentes",
+     "ms": 0.1
+    }
+   ]
+  },
+  {
+   "alias": "CONV-010",
+   "canal": "reclame_aqui",
+   "marca_grupo": "Belleza",
+   "prioridade": 10,
+   "categoria": "item_faltante",
+   "categoria_secundaria": null,
+   "acao": "solicitar_foto",
+   "destino": "automatico",
+   "acoes_secundarias": [],
+   "motivo": "A política exige foto para esta reclamação.",
+   "regra": "item_faltante",
+   "dados": [
+    {
+     "rotulo": "Status do pedido",
+     "valor": "entregue"
+    },
+    {
+     "rotulo": "Valor do pedido",
+     "valor": "R$ 179,70"
+    },
+    {
+     "rotulo": "Dias desde a entrega",
+     "valor": "6"
+    },
+    {
+     "rotulo": "Prazo da política (dias corridos)",
+     "valor": "7"
+    },
+    {
+     "rotulo": "Fotos no pedido (inclui outras conversas)",
+     "valor": "0"
+    },
+    {
+     "rotulo": "SLA de primeira resposta",
+     "valor": "1595 min restantes"
+    }
+   ],
+   "evidencias": [],
+   "resposta_cliente": "Olá! Para darmos andamento, por favor envie uma foto do produto e da embalagem do pedido PED-009.",
+   "log": [
+    {
+     "etapa": "mascarar",
+     "resultado": "ok",
+     "ms": 0.0
+    },
+    {
+     "etapa": "classificar",
+     "resultado": "item_faltante (confiança 0,98)",
+     "ms": 0.0
+    },
+    {
+     "etapa": "consultar_pedido",
+     "resultado": "entregue",
+     "ms": 0.2
+    },
+    {
+     "etapa": "decidir",
+     "resultado": "solicitar_foto",
+     "ms": 0.0
+    },
+    {
+     "etapa": "executar",
+     "resultado": "1 executadas, 0 pendentes",
+     "ms": 0.0
+    }
+   ]
+  },
+  {
+   "alias": "CONV-011",
+   "canal": "reclame_aqui",
+   "marca_grupo": "Belleza",
+   "prioridade": 11,
+   "categoria": "item_faltante",
+   "categoria_secundaria": null,
+   "acao": "negar_por_politica",
+   "destino": "automatico",
+   "acoes_secundarias": [],
+   "motivo": "Recebido há 11 dias; o prazo da política é de 7 dias corridos do recebimento.",
+   "regra": "item_faltante",
+   "dados": [
+    {
+     "rotulo": "Status do pedido",
+     "valor": "entregue"
+    },
+    {
+     "rotulo": "Valor do pedido",
+     "valor": "R$ 157,63"
+    },
+    {
+     "rotulo": "Dias desde a entrega",
+     "valor": "11"
+    },
+    {
+     "rotulo": "Prazo da política (dias corridos)",
+     "valor": "7"
+    },
+    {
+     "rotulo": "Fotos no pedido (inclui outras conversas)",
+     "valor": "0"
+    },
+    {
+     "rotulo": "SLA de primeira resposta",
+     "valor": "1624 min restantes"
+    }
+   ],
+   "evidencias": [],
+   "resposta_cliente": "Olá! Analisamos a sua solicitação do pedido PED-010 e, infelizmente, ela está fora da nossa política. A regra é: \"Reenvio sem custo do item faltante (inclusive brinde de campanha), mediante foto, em até 7 dias do recebimento.\"",
+   "log": [
+    {
+     "etapa": "mascarar",
+     "resultado": "ok",
+     "ms": 0.0
+    },
+    {
+     "etapa": "classificar",
+     "resultado": "item_faltante (confiança 0,99)",
+     "ms": 0.0
+    },
+    {
+     "etapa": "consultar_pedido",
+     "resultado": "entregue",
+     "ms": 0.2
+    },
+    {
+     "etapa": "decidir",
+     "resultado": "negar_por_politica",
+     "ms": 0.0
+    },
+    {
+     "etapa": "executar",
+     "resultado": "1 executadas, 0 pendentes",
+     "ms": 0.0
+    }
+   ]
+  },
+  {
+   "alias": "CONV-012",
+   "canal": "reclame_aqui",
+   "marca_grupo": "Modaviva",
+   "prioridade": 12,
+   "categoria": "atraso_entrega",
+   "categoria_secundaria": null,
+   "acao": "abrir_chamado_transportadora",
+   "destino": "automatico",
+   "acoes_secundarias": [],
+   "motivo": "Pedido não entregue, atraso de 0 dias úteis em relação a 2026-10-30.",
+   "regra": "atraso_entrega",
+   "dados": [
+    {
+     "rotulo": "Status do pedido",
+     "valor": "em_transito"
+    },
+    {
+     "rotulo": "Valor do pedido",
+     "valor": "R$ 137,80"
+    },
+    {
+     "rotulo": "Data prometida",
+     "valor": "2026-10-30"
+    },
+    {
+     "rotulo": "Dias úteis de atraso",
+     "valor": "0"
+    },
+    {
+     "rotulo": "Dias úteis sem movimento no rastreio",
+     "valor": "2"
+    },
+    {
+     "rotulo": "SLA de primeira resposta",
+     "valor": "1671 min restantes"
+    }
+   ],
+   "evidencias": [],
+   "resposta_cliente": "Olá! Abrimos um chamado com a transportadora TransNorte sobre o pedido PED-011, que tinha previsão de entrega para 30/10/2026. Assim que tivermos o retorno, avisamos você por aqui.",
+   "log": [
+    {
+     "etapa": "mascarar",
+     "resultado": "ok",
+     "ms": 0.0
+    },
+    {
+     "etapa": "classificar",
+     "resultado": "atraso_entrega (confiança 0,97)",
+     "ms": 0.0
+    },
+    {
+     "etapa": "consultar_pedido",
+     "resultado": "em_transito",
+     "ms": 0.2
+    },
+    {
+     "etapa": "decidir",
+     "resultado": "abrir_chamado_transportadora",
+     "ms": 0.0
+    },
+    {
+     "etapa": "executar",
+     "resultado": "2 executadas, 0 pendentes",
+     "ms": 0.1
+    }
+   ]
+  },
+  {
+   "alias": "CONV-013",
+   "canal": "reclame_aqui",
+   "marca_grupo": "Belleza",
+   "prioridade": 13,
+   "categoria": "item_faltante",
+   "categoria_secundaria": null,
+   "acao": "solicitar_foto",
+   "destino": "automatico",
+   "acoes_secundarias": [],
+   "motivo": "A política exige foto para esta reclamação.",
+   "regra": "item_faltante",
+   "dados": [
+    {
+     "rotulo": "Status do pedido",
+     "valor": "entregue"
+    },
+    {
+     "rotulo": "Valor do pedido",
+     "valor": "R$ 130,63"
+    },
+    {
+     "rotulo": "Dias desde a entrega",
+     "valor": "6"
+    },
+    {
+     "rotulo": "Prazo da política (dias corridos)",
+     "valor": "7"
+    },
+    {
+     "rotulo": "Fotos no pedido (inclui outras conversas)",
+     "valor": "0"
+    },
+    {
+     "rotulo": "SLA de primeira resposta",
+     "valor": "1948 min restantes"
+    }
+   ],
+   "evidencias": [],
+   "resposta_cliente": "Olá! Para darmos andamento, por favor envie uma foto do produto e da embalagem do pedido PED-012.",
+   "log": [
+    {
+     "etapa": "mascarar",
+     "resultado": "ok",
+     "ms": 0.0
+    },
+    {
+     "etapa": "classificar",
+     "resultado": "item_faltante (confiança 0,99)",
+     "ms": 0.0
+    },
+    {
+     "etapa": "consultar_pedido",
+     "resultado": "entregue",
+     "ms": 0.2
+    },
+    {
+     "etapa": "decidir",
+     "resultado": "solicitar_foto",
+     "ms": 0.0
+    },
+    {
+     "etapa": "executar",
+     "resultado": "1 executadas, 0 pendentes",
+     "ms": 0.0
+    }
+   ]
+  },
+  {
+   "alias": "CONV-014",
+   "canal": "reclame_aqui",
+   "marca_grupo": "Belleza",
+   "prioridade": 14,
+   "categoria": "item_faltante",
+   "categoria_secundaria": null,
+   "acao": "solicitar_foto",
+   "destino": "automatico",
+   "acoes_secundarias": [],
+   "motivo": "A política exige foto para esta reclamação.",
+   "regra": "item_faltante",
+   "dados": [
+    {
+     "rotulo": "Status do pedido",
+     "valor": "entregue"
+    },
+    {
+     "rotulo": "Valor do pedido",
+     "valor": "R$ 159,60"
+    },
+    {
+     "rotulo": "Dias desde a entrega",
+     "valor": "5"
+    },
+    {
+     "rotulo": "Prazo da política (dias corridos)",
+     "valor": "7"
+    },
+    {
+     "rotulo": "Dias úteis sem movimento no rastreio",
+     "valor": "2"
+    },
+    {
+     "rotulo": "Fotos no pedido (inclui outras conversas)",
+     "valor": "0"
+    },
+    {
+     "rotulo": "SLA de primeira resposta",
+     "valor": "2007 min restantes"
+    }
+   ],
+   "evidencias": [],
+   "resposta_cliente": "Olá! Para darmos andamento, por favor envie uma foto do produto e da embalagem do pedido PED-013.",
+   "log": [
+    {
+     "etapa": "mascarar",
+     "resultado": "ok",
+     "ms": 0.0
+    },
+    {
+     "etapa": "classificar",
+     "resultado": "item_faltante (confiança 0,99)",
+     "ms": 0.0
+    },
+    {
+     "etapa": "consultar_pedido",
+     "resultado": "entregue",
+     "ms": 0.2
+    },
+    {
+     "etapa": "decidir",
+     "resultado": "solicitar_foto",
+     "ms": 0.0
+    },
+    {
+     "etapa": "executar",
+     "resultado": "1 executadas, 0 pendentes",
+     "ms": 0.0
+    }
+   ]
+  },
+  {
+   "alias": "CONV-015",
+   "canal": "reclame_aqui",
+   "marca_grupo": "Belleza",
+   "prioridade": 15,
+   "categoria": "item_faltante",
+   "categoria_secundaria": null,
+   "acao": "solicitar_foto",
+   "destino": "automatico",
+   "acoes_secundarias": [],
+   "motivo": "A política exige foto para esta reclamação.",
+   "regra": "item_faltante",
+   "dados": [
+    {
+     "rotulo": "Status do pedido",
+     "valor": "entregue"
+    },
+    {
+     "rotulo": "Valor do pedido",
+     "valor": "R$ 168,60"
+    },
+    {
+     "rotulo": "Dias desde a entrega",
+     "valor": "4"
+    },
+    {
+     "rotulo": "Prazo da política (dias corridos)",
+     "valor": "7"
+    },
+    {
+     "rotulo": "Fotos no pedido (inclui outras conversas)",
+     "valor": "0"
+    },
+    {
+     "rotulo": "SLA de primeira resposta",
+     "valor": "2071 min restantes"
+    }
+   ],
+   "evidencias": [],
+   "resposta_cliente": "Olá! Para darmos andamento, por favor envie uma foto do produto e da embalagem do pedido PED-014.",
+   "log": [
+    {
+     "etapa": "mascarar",
+     "resultado": "ok",
+     "ms": 0.0
+    },
+    {
+     "etapa": "classificar",
+     "resultado": "item_faltante (confiança 0,99)",
+     "ms": 0.0
+    },
+    {
+     "etapa": "consultar_pedido",
+     "resultado": "entregue",
+     "ms": 0.2
+    },
+    {
+     "etapa": "decidir",
+     "resultado": "solicitar_foto",
+     "ms": 0.0
+    },
+    {
+     "etapa": "executar",
+     "resultado": "1 executadas, 0 pendentes",
+     "ms": 0.0
+    }
+   ]
+  },
+  {
+   "alias": "CONV-016",
+   "canal": "reclame_aqui",
+   "marca_grupo": "Belleza",
+   "prioridade": 16,
+   "categoria": "pagamento_pendente",
+   "categoria_secundaria": null,
+   "acao": "verificar_pagamento",
+   "destino": "automatico",
+   "acoes_secundarias": [],
+   "motivo": "Consultar o pagamento no gateway.",
+   "regra": "pagamento_pendente",
+   "dados": [
+    {
+     "rotulo": "Status do pedido",
+     "valor": "aguardando_separacao"
+    },
+    {
+     "rotulo": "Valor do pedido",
+     "valor": "R$ 94,81"
+    },
+    {
+     "rotulo": "Data prometida",
+     "valor": "2026-11-11"
+    },
+    {
+     "rotulo": "SLA de primeira resposta",
+     "valor": "2163 min restantes"
+    }
+   ],
+   "evidencias": [],
+   "resposta_cliente": "Olá! Estamos verificando o pagamento do pedido PED-015. Pela nossa política: \"Pix compensa em até 30 minutos; boleto em até 2 dias úteis.\"",
+   "log": [
+    {
+     "etapa": "mascarar",
+     "resultado": "ok",
+     "ms": 0.0
+    },
+    {
+     "etapa": "classificar",
+     "resultado": "pagamento_pendente (confiança 0,99)",
+     "ms": 0.0
+    },
+    {
+     "etapa": "consultar_pedido",
+     "resultado": "aguardando_separacao",
+     "ms": 0.2
+    },
+    {
+     "etapa": "decidir",
+     "resultado": "verificar_pagamento",
+     "ms": 0.0
+    },
+    {
+     "etapa": "executar",
+     "resultado": "2 executadas, 0 pendentes",
+     "ms": 0.0
+    }
+   ]
+  },
+  {
+   "alias": "CONV-017",
+   "canal": "reclame_aqui",
+   "marca_grupo": "Belleza",
+   "prioridade": 17,
+   "categoria": "atraso_entrega",
+   "categoria_secundaria": null,
+   "acao": "abrir_chamado_transportadora",
+   "destino": "automatico",
+   "acoes_secundarias": [],
+   "motivo": "Pedido não entregue, atraso de 5 dias úteis em relação a 2026-10-23.",
+   "regra": "atraso_entrega",
+   "dados": [
+    {
+     "rotulo": "Status do pedido",
+     "valor": "em_transito"
+    },
+    {
+     "rotulo": "Valor do pedido",
+     "valor": "R$ 57,81"
+    },
+    {
+     "rotulo": "Data prometida",
+     "valor": "2026-10-23"
+    },
+    {
+     "rotulo": "Dias úteis de atraso",
+     "valor": "5"
+    },
+    {
+     "rotulo": "Dias úteis sem movimento no rastreio",
+     "valor": "0"
+    },
+    {
+     "rotulo": "SLA de primeira resposta",
+     "valor": "2181 min restantes"
+    }
+   ],
+   "evidencias": [],
+   "resposta_cliente": "Olá! Abrimos um chamado com a transportadora Expressa Já sobre o pedido PED-016, que tinha previsão de entrega para 23/10/2026. Assim que tivermos o retorno, avisamos você por aqui.",
+   "log": [
+    {
+     "etapa": "mascarar",
+     "resultado": "ok",
+     "ms": 0.0
+    },
+    {
+     "etapa": "classificar",
+     "resultado": "atraso_entrega (confiança 0,99)",
+     "ms": 0.0
+    },
+    {
+     "etapa": "consultar_pedido",
+     "resultado": "em_transito",
+     "ms": 0.2
+    },
+    {
+     "etapa": "decidir",
+     "resultado": "abrir_chamado_transportadora",
+     "ms": 0.0
+    },
+    {
+     "etapa": "executar",
+     "resultado": "2 executadas, 0 pendentes",
+     "ms": 0.1
+    }
+   ]
+  },
+  {
+   "alias": "CONV-018",
+   "canal": "reclame_aqui",
+   "marca_grupo": "Belleza",
+   "prioridade": 18,
+   "categoria": "item_faltante",
+   "categoria_secundaria": null,
+   "acao": "solicitar_foto",
+   "destino": "automatico",
+   "acoes_secundarias": [],
+   "motivo": "A política exige foto para esta reclamação.",
+   "regra": "item_faltante",
+   "dados": [
+    {
+     "rotulo": "Status do pedido",
+     "valor": "entregue"
+    },
+    {
+     "rotulo": "Valor do pedido",
+     "valor": "R$ 79,80"
+    },
+    {
+     "rotulo": "Dias desde a entrega",
+     "valor": "5"
+    },
+    {
+     "rotulo": "Prazo da política (dias corridos)",
+     "valor": "7"
+    },
+    {
+     "rotulo": "Fotos no pedido (inclui outras conversas)",
+     "valor": "0"
+    },
+    {
+     "rotulo": "SLA de primeira resposta",
+     "valor": "2271 min restantes"
+    }
+   ],
+   "evidencias": [],
+   "resposta_cliente": "Olá! Para darmos andamento, por favor envie uma foto do produto e da embalagem do pedido PED-017.",
+   "log": [
+    {
+     "etapa": "mascarar",
+     "resultado": "ok",
+     "ms": 0.0
+    },
+    {
+     "etapa": "classificar",
+     "resultado": "item_faltante (confiança 1,00)",
+     "ms": 0.0
+    },
+    {
+     "etapa": "consultar_pedido",
+     "resultado": "entregue",
+     "ms": 0.2
+    },
+    {
+     "etapa": "decidir",
+     "resultado": "solicitar_foto",
+     "ms": 0.0
+    },
+    {
+     "etapa": "executar",
+     "resultado": "1 executadas, 0 pendentes",
+     "ms": 0.0
+    }
+   ]
+  },
+  {
+   "alias": "CONV-019",
+   "canal": "reclame_aqui",
+   "marca_grupo": "Belleza",
+   "prioridade": 19,
+   "categoria": "onde_esta_pedido",
+   "categoria_secundaria": "duvida_produto",
+   "acao": "informar_status",
+   "destino": "automatico",
+   "acoes_secundarias": [],
+   "motivo": "Informar status e previsão do pedido.",
+   "regra": "onde_esta_pedido",
+   "dados": [
+    {
+     "rotulo": "Status do pedido",
+     "valor": "em_transito"
+    },
+    {
+     "rotulo": "Valor do pedido",
+     "valor": "R$ 57,06"
+    },
+    {
+     "rotulo": "Data prometida",
+     "valor": "2026-11-05"
+    },
+    {
+     "rotulo": "Dias úteis sem movimento no rastreio",
+     "valor": "0"
+    },
+    {
+     "rotulo": "SLA de primeira resposta",
+     "valor": "2369 min restantes"
+    }
+   ],
+   "evidencias": [],
+   "resposta_cliente": "Olá! Seu pedido PED-018 está em trânsito, com a transportadora Rápido Sul. A previsão de entrega é 05/11/2026.",
+   "log": [
+    {
+     "etapa": "mascarar",
+     "resultado": "ok",
+     "ms": 0.0
+    },
+    {
+     "etapa": "classificar",
+     "resultado": "onde_esta_pedido (confiança 0,98)",
+     "ms": 0.0
+    },
+    {
+     "etapa": "consultar_pedido",
+     "resultado": "em_transito",
+     "ms": 0.2
+    },
+    {
+     "etapa": "decidir",
+     "resultado": "informar_status",
+     "ms": 0.0
+    },
+    {
+     "etapa": "executar",
+     "resultado": "1 executadas, 0 pendentes",
+     "ms": 0.0
+    }
+   ]
+  },
+  {
+   "alias": "CONV-020",
+   "canal": "reclame_aqui",
+   "marca_grupo": "Belleza",
+   "prioridade": 20,
+   "categoria": "onde_esta_pedido",
+   "categoria_secundaria": null,
+   "acao": "abrir_chamado_transportadora",
+   "destino": "automatico",
+   "acoes_secundarias": [],
+   "motivo": "Rastreio parado há 5 dias úteis.",
+   "regra": "onde_esta_pedido",
+   "dados": [
+    {
+     "rotulo": "Status do pedido",
+     "valor": "em_transito"
+    },
+    {
+     "rotulo": "Valor do pedido",
+     "valor": "R$ 102,80"
+    },
+    {
+     "rotulo": "Data prometida",
+     "valor": "2026-10-29"
+    },
+    {
+     "rotulo": "Dias úteis de atraso",
+     "valor": "1"
+    },
+    {
+     "rotulo": "Dias úteis sem movimento no rastreio",
+     "valor": "5"
+    },
+    {
+     "rotulo": "SLA de primeira resposta",
+     "valor": "já respondida"
+    }
+   ],
+   "evidencias": [],
+   "resposta_cliente": "Olá! Abrimos um chamado com a transportadora Expressa Já sobre o pedido PED-019, que tinha previsão de entrega para 29/10/2026. Assim que tivermos o retorno, avisamos você por aqui.",
+   "log": [
+    {
+     "etapa": "mascarar",
+     "resultado": "ok",
+     "ms": 0.0
+    },
+    {
+     "etapa": "classificar",
+     "resultado": "onde_esta_pedido (confiança 0,94)",
+     "ms": 0.0
+    },
+    {
+     "etapa": "consultar_pedido",
+     "resultado": "em_transito",
+     "ms": 0.4
+    },
+    {
+     "etapa": "decidir",
+     "resultado": "abrir_chamado_transportadora",
+     "ms": 0.0
+    },
+    {
+     "etapa": "executar",
+     "resultado": "2 executadas, 0 pendentes",
+     "ms": 0.1
+    }
+   ]
+  },
+  {
+   "alias": "CONV-021",
+   "canal": "reclame_aqui",
+   "marca_grupo": "Belleza",
+   "prioridade": 21,
+   "categoria": "onde_esta_pedido",
+   "categoria_secundaria": null,
+   "acao": "informar_status",
+   "destino": "automatico",
+   "acoes_secundarias": [],
+   "motivo": "Informar status e previsão do pedido.",
+   "regra": "onde_esta_pedido",
+   "dados": [
+    {
+     "rotulo": "Status do pedido",
+     "valor": "entregue"
+    },
+    {
+     "rotulo": "Valor do pedido",
+     "valor": "R$ 72,17"
+    },
+    {
+     "rotulo": "Dias desde a entrega",
+     "valor": "3"
+    },
+    {
+     "rotulo": "SLA de primeira resposta",
+     "valor": "já respondida"
+    }
+   ],
+   "evidencias": [],
+   "resposta_cliente": "Olá! Seu pedido PED-020 está entregue, com a transportadora TransLeste. A entrega consta em 30/10/2026.",
+   "log": [
+    {
+     "etapa": "mascarar",
+     "resultado": "ok",
+     "ms": 0.0
+    },
+    {
+     "etapa": "classificar",
+     "resultado": "onde_esta_pedido (confiança 0,98)",
+     "ms": 0.0
+    },
+    {
+     "etapa": "consultar_pedido",
+     "resultado": "entregue",
+     "ms": 0.2
+    },
+    {
+     "etapa": "decidir",
+     "resultado": "informar_status",
+     "ms": 0.0
+    },
+    {
+     "etapa": "executar",
+     "resultado": "1 executadas, 0 pendentes",
+     "ms": 0.0
+    }
+   ]
+  },
+  {
+   "alias": "CONV-022",
+   "canal": "reclame_aqui",
+   "marca_grupo": "Belleza",
+   "prioridade": 22,
+   "categoria": "atraso_entrega",
+   "categoria_secundaria": null,
+   "acao": "abrir_chamado_transportadora",
+   "destino": "automatico",
+   "acoes_secundarias": [],
+   "motivo": "Pedido não entregue, atraso de 0 dias úteis em relação a 2026-10-30.",
+   "regra": "atraso_entrega",
+   "dados": [
+    {
+     "rotulo": "Status do pedido",
+     "valor": "em_transito"
+    },
+    {
+     "rotulo": "Valor do pedido",
+     "valor": "R$ 58,81"
+    },
+    {
+     "rotulo": "Data prometida",
+     "valor": "2026-10-30"
+    },
+    {
+     "rotulo": "Dias úteis de atraso",
+     "valor": "0"
+    },
+    {
+     "rotulo": "Dias úteis sem movimento no rastreio",
+     "valor": "2"
+    },
+    {
+     "rotulo": "SLA de primeira resposta",
+     "valor": "já respondida"
+    }
+   ],
+   "evidencias": [],
+   "resposta_cliente": "Olá! Abrimos um chamado com a transportadora Expressa Já sobre o pedido PED-021, que tinha previsão de entrega para 30/10/2026. Assim que tivermos o retorno, avisamos você por aqui.",
+   "log": [
+    {
+     "etapa": "mascarar",
+     "resultado": "ok",
+     "ms": 0.0
+    },
+    {
+     "etapa": "classificar",
+     "resultado": "atraso_entrega (confiança 0,99)",
+     "ms": 0.0
+    },
+    {
+     "etapa": "consultar_pedido",
+     "resultado": "em_transito",
+     "ms": 0.2
+    },
+    {
+     "etapa": "decidir",
+     "resultado": "abrir_chamado_transportadora",
+     "ms": 0.0
+    },
+    {
+     "etapa": "executar",
+     "resultado": "2 executadas, 0 pendentes",
+     "ms": 0.1
+    }
+   ]
+  },
+  {
+   "alias": "CONV-023",
+   "canal": "reclame_aqui",
+   "marca_grupo": "Belleza",
+   "prioridade": 23,
+   "categoria": "atraso_entrega",
+   "categoria_secundaria": null,
+   "acao": "abrir_chamado_transportadora",
+   "destino": "automatico",
+   "acoes_secundarias": [],
+   "motivo": "Pedido não entregue, atraso de 1 dias úteis em relação a 2026-10-29.",
+   "regra": "atraso_entrega",
+   "dados": [
+    {
+     "rotulo": "Status do pedido",
+     "valor": "em_transito"
+    },
+    {
+     "rotulo": "Valor do pedido",
+     "valor": "R$ 88,80"
+    },
+    {
+     "rotulo": "Data prometida",
+     "valor": "2026-10-29"
+    },
+    {
+     "rotulo": "Dias úteis de atraso",
+     "valor": "1"
+    },
+    {
+     "rotulo": "Dias úteis sem movimento no rastreio",
+     "valor": "0"
+    },
+    {
+     "rotulo": "SLA de primeira resposta",
+     "valor": "já respondida"
+    }
+   ],
+   "evidencias": [],
+   "resposta_cliente": "Olá! Abrimos um chamado com a transportadora Expressa Já sobre o pedido PED-022, que tinha previsão de entrega para 29/10/2026. Assim que tivermos o retorno, avisamos você por aqui.",
+   "log": [
+    {
+     "etapa": "mascarar",
+     "resultado": "ok",
+     "ms": 0.0
+    },
+    {
+     "etapa": "classificar",
+     "resultado": "atraso_entrega (confiança 0,99)",
+     "ms": 0.0
+    },
+    {
+     "etapa": "consultar_pedido",
+     "resultado": "em_transito",
+     "ms": 0.2
+    },
+    {
+     "etapa": "decidir",
+     "resultado": "abrir_chamado_transportadora",
+     "ms": 0.0
+    },
+    {
+     "etapa": "executar",
+     "resultado": "2 executadas, 0 pendentes",
+     "ms": 0.1
+    }
+   ]
+  },
+  {
+   "alias": "CONV-024",
+   "canal": "reclame_aqui",
+   "marca_grupo": "Belleza",
+   "prioridade": 24,
+   "categoria": "onde_esta_pedido",
+   "categoria_secundaria": null,
+   "acao": "informar_status",
+   "destino": "automatico",
+   "acoes_secundarias": [],
+   "motivo": "Informar status e previsão do pedido.",
+   "regra": "onde_esta_pedido",
+   "dados": [
+    {
+     "rotulo": "Status do pedido",
+     "valor": "em_transito"
+    },
+    {
+     "rotulo": "Valor do pedido",
+     "valor": "R$ 98,91"
+    },
+    {
+     "rotulo": "Data prometida",
+     "valor": "2026-11-04"
+    },
+    {
+     "rotulo": "Dias úteis sem movimento no rastreio",
+     "valor": "0"
+    },
+    {
+     "rotulo": "SLA de primeira resposta",
+     "valor": "já respondida"
+    }
+   ],
+   "evidencias": [],
+   "resposta_cliente": "Olá! Seu pedido PED-023 está em trânsito, com a transportadora TransLeste. A previsão de entrega é 04/11/2026.",
+   "log": [
+    {
+     "etapa": "mascarar",
+     "resultado": "ok",
+     "ms": 0.0
+    },
+    {
+     "etapa": "classificar",
+     "resultado": "onde_esta_pedido (confiança 0,98)",
+     "ms": 0.0
+    },
+    {
+     "etapa": "consultar_pedido",
+     "resultado": "em_transito",
+     "ms": 0.4
+    },
+    {
+     "etapa": "decidir",
+     "resultado": "informar_status",
+     "ms": 0.0
+    },
+    {
+     "etapa": "executar",
+     "resultado": "1 executadas, 0 pendentes",
+     "ms": 0.1
+    }
+   ]
+  },
+  {
+   "alias": "CONV-025",
+   "canal": "email",
+   "marca_grupo": "Modaviva",
+   "prioridade": 25,
+   "categoria": "onde_esta_pedido",
+   "categoria_secundaria": null,
+   "acao": "informar_status",
+   "destino": "automatico",
+   "acoes_secundarias": [],
+   "motivo": "Informar status e previsão do pedido.",
+   "regra": "onde_esta_pedido",
+   "dados": [
+    {
+     "rotulo": "Status do pedido",
+     "valor": "em_transito"
+    },
+    {
+     "rotulo": "Valor do pedido",
+     "valor": "R$ 118,80"
+    },
+    {
+     "rotulo": "Data prometida",
+     "valor": "2026-11-03"
+    },
+    {
+     "rotulo": "Dias úteis sem movimento no rastreio",
+     "valor": "0"
+    },
+    {
+     "rotulo": "SLA de primeira resposta",
+     "valor": "vencido há 962 min"
+    }
+   ],
+   "evidencias": [],
+   "resposta_cliente": "Olá! Seu pedido PED-024 está em trânsito, com a transportadora TransNorte. A previsão de entrega é 03/11/2026.",
+   "log": [
+    {
+     "etapa": "mascarar",
+     "resultado": "ok",
+     "ms": 0.0
+    },
+    {
+     "etapa": "classificar",
+     "resultado": "onde_esta_pedido (confiança 0,99)",
+     "ms": 0.0
+    },
+    {
+     "etapa": "consultar_pedido",
+     "resultado": "em_transito",
+     "ms": 0.2
+    },
+    {
+     "etapa": "decidir",
+     "resultado": "informar_status",
+     "ms": 0.0
+    },
+    {
+     "etapa": "executar",
+     "resultado": "1 executadas, 0 pendentes",
+     "ms": 0.0
+    }
+   ]
+  },
+  {
+   "alias": "CONV-026",
+   "canal": "whatsapp",
+   "marca_grupo": "Belleza",
+   "prioridade": 26,
+   "categoria": "sem_interacao",
+   "categoria_secundaria": null,
+   "acao": "encerrar_conversa",
+   "destino": "automatico",
+   "acoes_secundarias": [],
+   "motivo": "Ação da política para a categoria.",
+   "regra": "sem_interacao",
+   "dados": [
+    {
+     "rotulo": "SLA de primeira resposta",
+     "valor": "9 min restantes"
+    }
+   ],
+   "evidencias": [],
+   "resposta_cliente": null,
+   "log": [
+    {
+     "etapa": "mascarar",
+     "resultado": "sem texto do cliente",
+     "ms": 0.0
+    },
+    {
+     "etapa": "classificar",
+     "resultado": "sem_interacao (confiança 1,00)",
+     "ms": 0.0
+    },
+    {
+     "etapa": "consultar_pedido",
+     "resultado": "sem pedido",
+     "ms": 0.1
+    },
+    {
+     "etapa": "decidir",
+     "resultado": "encerrar_conversa",
+     "ms": 0.0
+    },
+    {
+     "etapa": "executar",
+     "resultado": "1 executadas, 0 pendentes",
+     "ms": 0.0
+    }
+   ]
+  },
+  {
+   "alias": "CONV-027",
+   "canal": "whatsapp",
+   "marca_grupo": "Modaviva",
+   "prioridade": 27,
+   "categoria": "avaria_vazamento",
+   "categoria_secundaria": null,
+   "acao": "negar_por_politica",
+   "destino": "automatico",
+   "acoes_secundarias": [],
+   "motivo": "Recebido há 17 dias; o prazo da política é de 7 dias corridos do recebimento.",
+   "regra": "avaria_vazamento",
+   "dados": [
+    {
+     "rotulo": "Status do pedido",
+     "valor": "entregue"
+    },
+    {
+     "rotulo": "Valor do pedido",
+     "valor": "R$ 82,80"
+    },
+    {
+     "rotulo": "Dias desde a entrega",
+     "valor": "17"
+    },
+    {
+     "rotulo": "Prazo da política (dias corridos)",
+     "valor": "7"
+    },
+    {
+     "rotulo": "Fotos no pedido (inclui outras conversas)",
+     "valor": "0"
+    },
+    {
+     "rotulo": "SLA de primeira resposta",
+     "valor": "27 min restantes"
+    }
+   ],
+   "evidencias": [],
+   "resposta_cliente": "Olá! Analisamos a sua solicitação do pedido PED-025 e, infelizmente, ela está fora da nossa política. A regra é: \"Reenvio sem custo mediante foto em até 7 dias do recebimento.\"",
+   "log": [
+    {
+     "etapa": "mascarar",
+     "resultado": "ok",
+     "ms": 0.0
+    },
+    {
+     "etapa": "classificar",
+     "resultado": "avaria_vazamento (confiança 0,97)",
+     "ms": 0.0
+    },
+    {
+     "etapa": "consultar_pedido",
+     "resultado": "entregue",
+     "ms": 0.2
+    },
+    {
+     "etapa": "decidir",
+     "resultado": "negar_por_politica",
+     "ms": 0.0
+    },
+    {
+     "etapa": "executar",
+     "resultado": "1 executadas, 0 pendentes",
+     "ms": 0.0
+    }
+   ]
+  },
+  {
+   "alias": "CONV-028",
+   "canal": "whatsapp",
+   "marca_grupo": "Belleza",
+   "prioridade": 28,
+   "categoria": "sem_interacao",
+   "categoria_secundaria": null,
+   "acao": "encerrar_conversa",
+   "destino": "automatico",
+   "acoes_secundarias": [],
+   "motivo": "Ação da política para a categoria.",
+   "regra": "sem_interacao",
+   "dados": [
+    {
+     "rotulo": "SLA de primeira resposta",
+     "valor": "30 min restantes"
+    }
+   ],
+   "evidencias": [],
+   "resposta_cliente": null,
+   "log": [
+    {
+     "etapa": "mascarar",
+     "resultado": "sem texto do cliente",
+     "ms": 0.0
+    },
+    {
+     "etapa": "classificar",
+     "resultado": "sem_interacao (confiança 1,00)",
+     "ms": 0.0
+    },
+    {
+     "etapa": "consultar_pedido",
+     "resultado": "sem pedido",
+     "ms": 0.1
+    },
+    {
+     "etapa": "decidir",
+     "resultado": "encerrar_conversa",
+     "ms": 0.0
+    },
+    {
+     "etapa": "executar",
+     "resultado": "1 executadas, 0 pendentes",
+     "ms": 0.0
+    }
+   ]
+  },
+  {
+   "alias": "CONV-029",
+   "canal": "whatsapp",
+   "marca_grupo": "Belleza",
+   "prioridade": 29,
+   "categoria": "cupom_promocao",
+   "categoria_secundaria": null,
+   "acao": "acionar_pessoa",
+   "destino": "pessoa",
+   "acoes_secundarias": [],
+   "motivo": "Pedido de promoção ou desconto que nenhuma política cobre; uma pessoa do comercial decide.",
+   "regra": "cupom_promocao",
+   "dados": [
+    {
+     "rotulo": "Status do pedido",
+     "valor": "aguardando_separacao"
+    },
+    {
+     "rotulo": "Valor do pedido",
+     "valor": "R$ 61,06"
+    },
+    {
+     "rotulo": "Data prometida",
+     "valor": "2026-11-10"
+    },
+    {
+     "rotulo": "SLA de primeira resposta",
+     "valor": "30 min restantes"
+    }
+   ],
+   "evidencias": [],
+   "resposta_cliente": "Olá! Recebemos a sua mensagem e encaminhamos o caso para a equipe responsável. Retornaremos por aqui assim que houver uma posição.",
+   "log": [
+    {
+     "etapa": "mascarar",
+     "resultado": "ok",
+     "ms": 0.0
+    },
+    {
+     "etapa": "classificar",
+     "resultado": "cupom_promocao (confiança 0,96)",
+     "ms": 0.0
+    },
+    {
+     "etapa": "consultar_pedido",
+     "resultado": "aguardando_separacao",
+     "ms": 0.2
+    },
+    {
+     "etapa": "decidir",
+     "resultado": "acionar_pessoa",
+     "ms": 0.0
+    },
+    {
+     "etapa": "executar",
+     "resultado": "2 executadas, 0 pendentes",
+     "ms": 0.1
+    }
+   ]
+  },
+  {
+   "alias": "CONV-030",
+   "canal": "whatsapp",
+   "marca_grupo": "Belleza",
+   "prioridade": 30,
+   "categoria": "duvida_produto",
+   "categoria_secundaria": null,
+   "acao": "responder_duvida",
+   "destino": "automatico",
+   "acoes_secundarias": [],
+   "motivo": "Ação da política para a categoria.",
+   "regra": "duvida_produto",
+   "dados": [
+    {
+     "rotulo": "Status do pedido",
+     "valor": "aguardando_separacao"
+    },
+    {
+     "rotulo": "Valor do pedido",
+     "valor": "R$ 72,80"
+    },
+    {
+     "rotulo": "Data prometida",
+     "valor": "2026-11-06"
+    },
+    {
+     "rotulo": "SLA de primeira resposta",
+     "valor": "30 min restantes"
+    }
+   ],
+   "evidencias": [],
+   "resposta_cliente": null,
+   "log": [
+    {
+     "etapa": "mascarar",
+     "resultado": "ok",
+     "ms": 0.0
+    },
+    {
+     "etapa": "classificar",
+     "resultado": "duvida_produto (confiança 0,99)",
+     "ms": 0.0
+    },
+    {
+     "etapa": "consultar_pedido",
+     "resultado": "aguardando_separacao",
+     "ms": 0.1
+    },
+    {
+     "etapa": "decidir",
+     "resultado": "responder_duvida",
+     "ms": 0.0
+    },
+    {
+     "etapa": "executar",
+     "resultado": "1 executadas, 0 pendentes",
+     "ms": 0.0
+    }
+   ]
+  },
+  {
+   "alias": "CONV-031",
+   "canal": "whatsapp",
+   "marca_grupo": "Modaviva",
+   "prioridade": 31,
+   "categoria": "sem_interacao",
+   "categoria_secundaria": null,
+   "acao": "encerrar_conversa",
+   "destino": "automatico",
+   "acoes_secundarias": [],
+   "motivo": "Ação da política para a categoria.",
+   "regra": "sem_interacao",
+   "dados": [
+    {
+     "rotulo": "Status do pedido",
+     "valor": "em_transito"
+    },
+    {
+     "rotulo": "Valor do pedido",
+     "valor": "R$ 170,91"
+    },
+    {
+     "rotulo": "Data prometida",
+     "valor": "2026-11-04"
+    },
+    {
+     "rotulo": "Dias úteis sem movimento no rastreio",
+     "valor": "2"
+    },
+    {
+     "rotulo": "SLA de primeira resposta",
+     "valor": "30 min restantes"
+    }
+   ],
+   "evidencias": [],
+   "resposta_cliente": null,
+   "log": [
+    {
+     "etapa": "mascarar",
+     "resultado": "sem texto do cliente",
+     "ms": 0.0
+    },
+    {
+     "etapa": "classificar",
+     "resultado": "sem_interacao (confiança 1,00)",
+     "ms": 0.0
+    },
+    {
+     "etapa": "consultar_pedido",
+     "resultado": "em_transito",
+     "ms": 0.2
+    },
+    {
+     "etapa": "decidir",
+     "resultado": "encerrar_conversa",
+     "ms": 0.0
+    },
+    {
+     "etapa": "executar",
+     "resultado": "1 executadas, 0 pendentes",
+     "ms": 0.0
+    }
+   ]
+  },
+  {
+   "alias": "CONV-032",
+   "canal": "whatsapp",
+   "marca_grupo": "Belleza",
+   "prioridade": 32,
+   "categoria": "cobranca_duplicada",
+   "categoria_secundaria": null,
+   "acao": "solicitar_aprovacao",
+   "destino": "aprovacao",
+   "acoes_secundarias": [
+    "reembolsar"
+   ],
+   "motivo": "Estorno da cobrança duplicada. Valor R$ 118.80 acima do limite do atendente (R$ 100.00): aprovação do supervisor.",
+   "regra": "cobranca_duplicada",
+   "dados": [
+    {
+     "rotulo": "Status do pedido",
+     "valor": "aguardando_separacao"
+    },
+    {
+     "rotulo": "Valor do pedido",
+     "valor": "R$ 118,80"
+    },
+    {
+     "rotulo": "Data prometida",
+     "valor": "2026-11-05"
+    },
+    {
+     "rotulo": "Limite do atendente",
+     "valor": "R$ 100,00"
+    },
+    {
+     "rotulo": "SLA de primeira resposta",
+     "valor": "30 min restantes"
+    }
+   ],
+   "evidencias": [],
+   "resposta_cliente": "Olá! Encaminhamos o reembolso do pedido PED-026 para aprovação interna, pois o valor passa do limite de aprovação do atendimento. Retornaremos por aqui assim que houver uma posição.",
+   "log": [
+    {
+     "etapa": "mascarar",
+     "resultado": "ok",
+     "ms": 0.0
+    },
+    {
+     "etapa": "classificar",
+     "resultado": "cobranca_duplicada (confiança 0,99)",
+     "ms": 0.0
+    },
+    {
+     "etapa": "consultar_pedido",
+     "resultado": "aguardando_separacao",
+     "ms": 0.2
+    },
+    {
+     "etapa": "decidir",
+     "resultado": "solicitar_aprovacao",
+     "ms": 0.0
+    },
+    {
+     "etapa": "executar",
+     "resultado": "2 executadas, 0 pendentes",
+     "ms": 0.1
+    }
+   ]
+  },
+  {
+   "alias": "CONV-033",
+   "canal": "whatsapp",
+   "marca_grupo": "Belleza",
+   "prioridade": 33,
+   "categoria": "troca_fragrancia",
+   "categoria_secundaria": null,
+   "acao": "trocar_produto",
+   "destino": "automatico",
+   "acoes_secundarias": [],
+   "motivo": "Troca em 20 dias do recebimento (prazo 30). Valor dentro do limite do atendente (R$ 200.00).",
+   "regra": "troca_fragrancia",
+   "dados": [
+    {
+     "rotulo": "Status do pedido",
+     "valor": "entregue"
+    },
+    {
+     "rotulo": "Valor do pedido",
+     "valor": "R$ 79,80"
+    },
+    {
+     "rotulo": "Dias desde a entrega",
+     "valor": "20"
+    },
+    {
+     "rotulo": "Limite do atendente",
+     "valor": "R$ 200,00"
+    },
+    {
+     "rotulo": "SLA de primeira resposta",
+     "valor": "30 min restantes"
+    }
+   ],
+   "evidencias": [],
+   "resposta_cliente": "Olá! A troca do produto do pedido PED-027 está dentro da política. Para seguirmos, por favor nos diga qual produto você gostaria de receber.",
+   "log": [
+    {
+     "etapa": "mascarar",
+     "resultado": "ok",
+     "ms": 0.0
+    },
+    {
+     "etapa": "classificar",
+     "resultado": "troca_fragrancia (confiança 0,99)",
+     "ms": 0.0
+    },
+    {
+     "etapa": "consultar_pedido",
+     "resultado": "entregue",
+     "ms": 0.2
+    },
+    {
+     "etapa": "decidir",
+     "resultado": "trocar_produto",
+     "ms": 0.0
+    },
+    {
+     "etapa": "executar",
+     "resultado": "1 executadas, 1 pendentes",
+     "ms": 0.0
+    }
+   ]
+  },
+  {
+   "alias": "CONV-034",
+   "canal": "whatsapp",
+   "marca_grupo": "Modaviva",
+   "prioridade": 34,
+   "categoria": "sem_interacao",
+   "categoria_secundaria": null,
+   "acao": "encerrar_conversa",
+   "destino": "automatico",
+   "acoes_secundarias": [],
+   "motivo": "Ação da política para a categoria.",
+   "regra": "sem_interacao",
+   "dados": [
+    {
+     "rotulo": "Status do pedido",
+     "valor": "aguardando_separacao"
+    },
+    {
+     "rotulo": "Valor do pedido",
+     "valor": "R$ 152,31"
+    },
+    {
+     "rotulo": "Data prometida",
+     "valor": "2026-11-09"
+    },
+    {
+     "rotulo": "SLA de primeira resposta",
+     "valor": "30 min restantes"
+    }
+   ],
+   "evidencias": [],
+   "resposta_cliente": null,
+   "log": [
+    {
+     "etapa": "mascarar",
+     "resultado": "sem texto do cliente",
+     "ms": 0.0
+    },
+    {
+     "etapa": "classificar",
+     "resultado": "sem_interacao (confiança 1,00)",
+     "ms": 0.0
+    },
+    {
+     "etapa": "consultar_pedido",
+     "resultado": "aguardando_separacao",
+     "ms": 0.2
+    },
+    {
+     "etapa": "decidir",
+     "resultado": "encerrar_conversa",
+     "ms": 0.0
+    },
+    {
+     "etapa": "executar",
+     "resultado": "1 executadas, 0 pendentes",
+     "ms": 0.0
+    }
+   ]
+  },
+  {
+   "alias": "CONV-035",
+   "canal": "whatsapp",
+   "marca_grupo": "Belleza",
+   "prioridade": 35,
+   "categoria": "item_faltante",
+   "categoria_secundaria": null,
+   "acao": "negar_por_politica",
+   "destino": "automatico",
+   "acoes_secundarias": [],
+   "motivo": "Recebido há 12 dias; o prazo da política é de 7 dias corridos do recebimento.",
+   "regra": "item_faltante",
+   "dados": [
+    {
+     "rotulo": "Status do pedido",
+     "valor": "entregue"
+    },
+    {
+     "rotulo": "Valor do pedido",
+     "valor": "R$ 139,80"
+    },
+    {
+     "rotulo": "Dias desde a entrega",
+     "valor": "12"
+    },
+    {
+     "rotulo": "Prazo da política (dias corridos)",
+     "valor": "7"
+    },
+    {
+     "rotulo": "Dias úteis sem movimento no rastreio",
+     "valor": "7"
+    },
+    {
+     "rotulo": "Fotos no pedido (inclui outras conversas)",
+     "valor": "1"
+    },
+    {
+     "rotulo": "SLA de primeira resposta",
+     "valor": "30 min restantes"
+    }
+   ],
+   "evidencias": [
+    {
+     "tipo": "exif_software_edicao",
+     "detalhe": "REF-001: metadado de software de edição (Editor de Fotos do Galaxy)"
+    }
+   ],
+   "resposta_cliente": "Olá! Analisamos a sua solicitação do pedido PED-028 e, infelizmente, ela está fora da nossa política. A regra é: \"Reenvio sem custo do item faltante (inclusive brinde de campanha), mediante foto, em até 7 dias do recebimento.\"",
+   "log": [
+    {
+     "etapa": "mascarar",
+     "resultado": "ok",
+     "ms": 0.0
+    },
+    {
+     "etapa": "classificar",
+     "resultado": "item_faltante (confiança 0,99)",
+     "ms": 0.0
+    },
+    {
+     "etapa": "consultar_pedido",
+     "resultado": "entregue",
+     "ms": 0.2
+    },
+    {
+     "etapa": "decidir",
+     "resultado": "negar_por_politica",
+     "ms": 0.1
+    },
+    {
+     "etapa": "executar",
+     "resultado": "1 executadas, 0 pendentes",
+     "ms": 0.0
+    }
+   ]
+  },
+  {
+   "alias": "CONV-036",
+   "canal": "whatsapp",
+   "marca_grupo": "Modaviva",
+   "prioridade": 36,
+   "categoria": "cupom_promocao",
+   "categoria_secundaria": null,
+   "acao": "validar_cupom",
+   "destino": "automatico",
+   "acoes_secundarias": [],
+   "motivo": "Ação da política para a categoria.",
+   "regra": "cupom_promocao",
+   "dados": [
+    {
+     "rotulo": "Status do pedido",
+     "valor": "aguardando_separacao"
+    },
+    {
+     "rotulo": "Valor do pedido",
+     "valor": "R$ 77,80"
+    },
+    {
+     "rotulo": "Data prometida",
+     "valor": "2026-11-09"
+    },
+    {
+     "rotulo": "SLA de primeira resposta",
+     "valor": "30 min restantes"
+    }
+   ],
+   "evidencias": [],
+   "resposta_cliente": "Olá! Para verificarmos o cupom, por favor nos informe o código exatamente como ele aparece para você.",
+   "log": [
+    {
+     "etapa": "mascarar",
+     "resultado": "ok",
+     "ms": 0.0
+    },
+    {
+     "etapa": "classificar",
+     "resultado": "cupom_promocao (confiança 0,99)",
+     "ms": 0.0
+    },
+    {
+     "etapa": "consultar_pedido",
+     "resultado": "aguardando_separacao",
+     "ms": 0.2
+    },
+    {
+     "etapa": "decidir",
+     "resultado": "validar_cupom",
+     "ms": 0.0
+    },
+    {
+     "etapa": "executar",
+     "resultado": "1 executadas, 1 pendentes",
+     "ms": 0.0
+    }
+   ]
+  },
+  {
+   "alias": "CONV-037",
+   "canal": "whatsapp",
+   "marca_grupo": "Belleza",
+   "prioridade": 37,
+   "categoria": "atraso_entrega",
+   "categoria_secundaria": null,
+   "acao": "abrir_chamado_transportadora",
+   "destino": "automatico",
+   "acoes_secundarias": [],
+   "motivo": "Pedido não entregue, atraso de 1 dias úteis em relação a 2026-10-29.",
+   "regra": "atraso_entrega",
+   "dados": [
+    {
+     "rotulo": "Status do pedido",
+     "valor": "em_transito"
+    },
+    {
+     "rotulo": "Valor do pedido",
+     "valor": "R$ 114,82"
+    },
+    {
+     "rotulo": "Data prometida",
+     "valor": "2026-10-29"
+    },
+    {
+     "rotulo": "Dias úteis de atraso",
+     "valor": "1"
+    },
+    {
+     "rotulo": "Dias úteis sem movimento no rastreio",
+     "valor": "1"
+    },
+    {
+     "rotulo": "SLA de primeira resposta",
+     "valor": "30 min restantes"
+    }
+   ],
+   "evidencias": [],
+   "resposta_cliente": "Olá! Abrimos um chamado com a transportadora Expressa Já sobre o pedido PED-029, que tinha previsão de entrega para 29/10/2026. Assim que tivermos o retorno, avisamos você por aqui.",
+   "log": [
+    {
+     "etapa": "mascarar",
+     "resultado": "ok",
+     "ms": 0.0
+    },
+    {
+     "etapa": "classificar",
+     "resultado": "atraso_entrega (confiança 0,99)",
+     "ms": 0.0
+    },
+    {
+     "etapa": "consultar_pedido",
+     "resultado": "em_transito",
+     "ms": 0.2
+    },
+    {
+     "etapa": "decidir",
+     "resultado": "abrir_chamado_transportadora",
+     "ms": 0.0
+    },
+    {
+     "etapa": "executar",
+     "resultado": "2 executadas, 0 pendentes",
+     "ms": 0.1
+    }
+   ]
+  },
+  {
+   "alias": "CONV-038",
+   "canal": "whatsapp",
+   "marca_grupo": "Belleza",
+   "prioridade": 38,
+   "categoria": "avaria_vazamento",
+   "categoria_secundaria": null,
+   "acao": "negar_por_politica",
+   "destino": "automatico",
+   "acoes_secundarias": [],
+   "motivo": "Recebido há 13 dias; o prazo da política é de 7 dias corridos do recebimento.",
+   "regra": "avaria_vazamento",
+   "dados": [
+    {
+     "rotulo": "Status do pedido",
+     "valor": "entregue"
+    },
+    {
+     "rotulo": "Valor do pedido",
+     "valor": "R$ 102,80"
+    },
+    {
+     "rotulo": "Dias desde a entrega",
+     "valor": "13"
+    },
+    {
+     "rotulo": "Prazo da política (dias corridos)",
+     "valor": "7"
+    },
+    {
+     "rotulo": "Fotos no pedido (inclui outras conversas)",
+     "valor": "1"
+    },
+    {
+     "rotulo": "SLA de primeira resposta",
+     "valor": "30 min restantes"
+    }
+   ],
+   "evidencias": [],
+   "resposta_cliente": "Olá! Analisamos a sua solicitação do pedido PED-030 e, infelizmente, ela está fora da nossa política. A regra é: \"Reenvio sem custo mediante foto em até 7 dias do recebimento.\"",
+   "log": [
+    {
+     "etapa": "mascarar",
+     "resultado": "ok",
+     "ms": 0.0
+    },
+    {
+     "etapa": "classificar",
+     "resultado": "avaria_vazamento (confiança 0,99)",
+     "ms": 0.0
+    },
+    {
+     "etapa": "consultar_pedido",
+     "resultado": "entregue",
+     "ms": 0.2
+    },
+    {
+     "etapa": "decidir",
+     "resultado": "negar_por_politica",
+     "ms": 0.0
+    },
+    {
+     "etapa": "executar",
+     "resultado": "1 executadas, 0 pendentes",
+     "ms": 0.0
+    }
+   ]
+  },
+  {
+   "alias": "CONV-039",
+   "canal": "whatsapp",
+   "marca_grupo": "Belleza",
+   "prioridade": 39,
+   "categoria": "cupom_promocao",
+   "categoria_secundaria": "duvida_produto",
+   "acao": "validar_cupom",
+   "destino": "automatico",
+   "acoes_secundarias": [],
+   "motivo": "Ação da política para a categoria.",
+   "regra": "cupom_promocao",
+   "dados": [
+    {
+     "rotulo": "Status do pedido",
+     "valor": "aguardando_separacao"
+    },
+    {
+     "rotulo": "Valor do pedido",
+     "valor": "R$ 92,80"
+    },
+    {
+     "rotulo": "Data prometida",
+     "valor": "2026-11-11"
+    },
+    {
+     "rotulo": "SLA de primeira resposta",
+     "valor": "30 min restantes"
+    }
+   ],
+   "evidencias": [],
+   "resposta_cliente": "Olá! Para verificarmos o cupom, por favor nos informe o código exatamente como ele aparece para você.",
+   "log": [
+    {
+     "etapa": "mascarar",
+     "resultado": "ok",
+     "ms": 0.0
+    },
+    {
+     "etapa": "classificar",
+     "resultado": "cupom_promocao (confiança 0,96)",
+     "ms": 0.0
+    },
+    {
+     "etapa": "consultar_pedido",
+     "resultado": "aguardando_separacao",
+     "ms": 0.2
+    },
+    {
+     "etapa": "decidir",
+     "resultado": "validar_cupom",
+     "ms": 0.0
+    },
+    {
+     "etapa": "executar",
+     "resultado": "1 executadas, 1 pendentes",
+     "ms": 0.0
+    }
+   ]
+  },
+  {
+   "alias": "CONV-040",
+   "canal": "whatsapp",
+   "marca_grupo": "Belleza",
+   "prioridade": 40,
+   "categoria": "onde_esta_pedido",
+   "categoria_secundaria": null,
+   "acao": "informar_status",
+   "destino": "automatico",
+   "acoes_secundarias": [],
+   "motivo": "Informar status e previsão do pedido.",
+   "regra": "onde_esta_pedido",
+   "dados": [
+    {
+     "rotulo": "Status do pedido",
+     "valor": "em_transito"
+    },
+    {
+     "rotulo": "Valor do pedido",
+     "valor": "R$ 59,90"
+    },
+    {
+     "rotulo": "Data prometida",
+     "valor": "2026-11-06"
+    },
+    {
+     "rotulo": "Dias úteis sem movimento no rastreio",
+     "valor": "0"
+    },
+    {
+     "rotulo": "SLA de primeira resposta",
+     "valor": "30 min restantes"
+    }
+   ],
+   "evidencias": [],
+   "resposta_cliente": "Olá! Seu pedido PED-031 está em trânsito, com a transportadora Expressa Já. A previsão de entrega é 06/11/2026.",
+   "log": [
+    {
+     "etapa": "mascarar",
+     "resultado": "ok",
+     "ms": 0.0
+    },
+    {
+     "etapa": "classificar",
+     "resultado": "onde_esta_pedido (confiança 0,96)",
+     "ms": 0.0
+    },
+    {
+     "etapa": "consultar_pedido",
+     "resultado": "em_transito",
+     "ms": 0.2
+    },
+    {
+     "etapa": "decidir",
+     "resultado": "informar_status",
+     "ms": 0.0
+    },
+    {
+     "etapa": "executar",
+     "resultado": "1 executadas, 0 pendentes",
+     "ms": 0.0
+    }
+   ]
+  },
+  {
+   "alias": "CONV-041",
+   "canal": "whatsapp",
+   "marca_grupo": "Modaviva",
+   "prioridade": 41,
+   "categoria": "atraso_entrega",
+   "categoria_secundaria": null,
+   "acao": "solicitar_aprovacao",
+   "destino": "aprovacao",
+   "acoes_secundarias": [
+    "reenviar_produto"
+   ],
+   "motivo": "Pedido não entregue, atraso de 10 dias úteis (limite de 7 dias úteis); reenvio; reembolso acima de R$ 100.00 exige aprovação do supervisor. Valor R$ 219.90 acima do limite do atendente (R$ 200.00): aprovação do supervisor.",
+   "regra": "atraso_entrega",
+   "dados": [
+    {
+     "rotulo": "Status do pedido",
+     "valor": "em_transito"
+    },
+    {
+     "rotulo": "Valor do pedido",
+     "valor": "R$ 219,90"
+    },
+    {
+     "rotulo": "Data prometida",
+     "valor": "2026-10-16"
+    },
+    {
+     "rotulo": "Dias úteis de atraso",
+     "valor": "10"
+    },
+    {
+     "rotulo": "Dias úteis sem movimento no rastreio",
+     "valor": "5"
+    },
+    {
+     "rotulo": "Limite do atendente",
+     "valor": "R$ 200,00"
+    },
+    {
+     "rotulo": "SLA de primeira resposta",
+     "valor": "30 min restantes"
+    }
+   ],
+   "evidencias": [],
+   "resposta_cliente": "Olá! Encaminhamos o reenvio do pedido PED-032 para aprovação interna, pois o valor passa do limite de aprovação do atendimento. Retornaremos por aqui assim que houver uma posição.",
+   "log": [
+    {
+     "etapa": "mascarar",
+     "resultado": "ok",
+     "ms": 0.0
+    },
+    {
+     "etapa": "classificar",
+     "resultado": "atraso_entrega (confiança 0,99)",
+     "ms": 0.0
+    },
+    {
+     "etapa": "consultar_pedido",
+     "resultado": "em_transito",
+     "ms": 0.2
+    },
+    {
+     "etapa": "decidir",
+     "resultado": "solicitar_aprovacao",
+     "ms": 0.0
+    },
+    {
+     "etapa": "executar",
+     "resultado": "2 executadas, 0 pendentes",
+     "ms": 0.1
+    }
+   ]
+  },
+  {
+   "alias": "CONV-042",
+   "canal": "whatsapp",
+   "marca_grupo": "Belleza",
+   "prioridade": 42,
+   "categoria": "arrependimento_cancelamento",
+   "categoria_secundaria": null,
+   "acao": "negar_por_politica",
+   "destino": "automatico",
+   "acoes_secundarias": [],
+   "motivo": "Recebido há 25 dias; prazo de 7 dias do recebimento.",
+   "regra": "arrependimento_cancelamento",
+   "dados": [
+    {
+     "rotulo": "Status do pedido",
+     "valor": "entregue"
+    },
+    {
+     "rotulo": "Valor do pedido",
+     "valor": "R$ 102,80"
+    },
+    {
+     "rotulo": "Dias desde a entrega",
+     "valor": "25"
+    },
+    {
+     "rotulo": "Prazo da política (dias corridos)",
+     "valor": "7"
+    },
+    {
+     "rotulo": "Pedido separado",
+     "valor": "sim"
+    },
+    {
+     "rotulo": "SLA de primeira resposta",
+     "valor": "30 min restantes"
+    }
+   ],
+   "evidencias": [],
+   "resposta_cliente": "Olá! Analisamos a sua solicitação do pedido PED-033 e, infelizmente, ela está fora da nossa política. A regra é: \"Antes da separação: cancelar o pedido (estorno integral, sem limite de valor). Depois do recebimento: reembolso integral em até 7 dias (CDC, art. 49), com coleta reversa. Fora do prazo: negar explicando a política.\"",
+   "log": [
+    {
+     "etapa": "mascarar",
+     "resultado": "ok",
+     "ms": 0.0
+    },
+    {
+     "etapa": "classificar",
+     "resultado": "arrependimento_cancelamento (confiança 0,98)",
+     "ms": 0.0
+    },
+    {
+     "etapa": "consultar_pedido",
+     "resultado": "entregue",
+     "ms": 0.2
+    },
+    {
+     "etapa": "decidir",
+     "resultado": "negar_por_politica",
+     "ms": 0.0
+    },
+    {
+     "etapa": "executar",
+     "resultado": "1 executadas, 0 pendentes",
+     "ms": 0.0
+    }
+   ]
+  },
+  {
+   "alias": "CONV-043",
+   "canal": "whatsapp",
+   "marca_grupo": "Belleza",
+   "prioridade": 43,
+   "categoria": "sem_interacao",
+   "categoria_secundaria": null,
+   "acao": "encerrar_conversa",
+   "destino": "automatico",
+   "acoes_secundarias": [],
+   "motivo": "Ação da política para a categoria.",
+   "regra": "sem_interacao",
+   "dados": [
+    {
+     "rotulo": "SLA de primeira resposta",
+     "valor": "30 min restantes"
+    }
+   ],
+   "evidencias": [],
+   "resposta_cliente": null,
+   "log": [
+    {
+     "etapa": "mascarar",
+     "resultado": "sem texto do cliente",
+     "ms": 0.0
+    },
+    {
+     "etapa": "classificar",
+     "resultado": "sem_interacao (confiança 1,00)",
+     "ms": 0.0
+    },
+    {
+     "etapa": "consultar_pedido",
+     "resultado": "sem pedido",
+     "ms": 0.1
+    },
+    {
+     "etapa": "decidir",
+     "resultado": "encerrar_conversa",
+     "ms": 0.0
+    },
+    {
+     "etapa": "executar",
+     "resultado": "1 executadas, 0 pendentes",
+     "ms": 0.0
+    }
+   ]
+  },
+  {
+   "alias": "CONV-044",
+   "canal": "email",
+   "marca_grupo": "Belleza",
+   "prioridade": 44,
+   "categoria": "alteracao_endereco",
+   "categoria_secundaria": null,
+   "acao": "alterar_endereco",
+   "destino": "automatico",
+   "acoes_secundarias": [],
+   "motivo": "Pedido ainda não separado.",
+   "regra": "alteracao_endereco",
+   "dados": [
+    {
+     "rotulo": "Status do pedido",
+     "valor": "aguardando_separacao"
+    },
+    {
+     "rotulo": "Valor do pedido",
+     "valor": "R$ 125,80"
+    },
+    {
+     "rotulo": "Data prometida",
+     "valor": "2026-11-06"
+    },
+    {
+     "rotulo": "Pedido separado",
+     "valor": "não"
+    },
+    {
+     "rotulo": "SLA de primeira resposta",
+     "valor": "166 min restantes"
+    }
+   ],
+   "evidencias": [],
+   "resposta_cliente": "Olá! O pedido PED-034 ainda não foi separado, então a alteração de endereço é possível. Nossa equipe vai registrar o novo endereço informado e confirmar com você por aqui.",
+   "log": [
+    {
+     "etapa": "mascarar",
+     "resultado": "ok",
+     "ms": 0.0
+    },
+    {
+     "etapa": "classificar",
+     "resultado": "alteracao_endereco (confiança 0,99)",
+     "ms": 0.0
+    },
+    {
+     "etapa": "consultar_pedido",
+     "resultado": "aguardando_separacao",
+     "ms": 0.2
+    },
+    {
+     "etapa": "decidir",
+     "resultado": "alterar_endereco",
+     "ms": 0.0
+    },
+    {
+     "etapa": "executar",
+     "resultado": "1 executadas, 1 pendentes",
+     "ms": 0.0
+    }
+   ]
+  },
+  {
+   "alias": "CONV-045",
+   "canal": "email",
+   "marca_grupo": "Belleza",
+   "prioridade": 45,
+   "categoria": "item_faltante",
+   "categoria_secundaria": null,
+   "acao": "solicitar_foto",
+   "destino": "automatico",
+   "acoes_secundarias": [],
+   "motivo": "A política exige foto para esta reclamação.",
+   "regra": "item_faltante",
+   "dados": [
+    {
+     "rotulo": "Status do pedido",
+     "valor": "entregue"
+    },
+    {
+     "rotulo": "Valor do pedido",
+     "valor": "R$ 139,80"
+    },
+    {
+     "rotulo": "Dias desde a entrega",
+     "valor": "5"
+    },
+    {
+     "rotulo": "Prazo da política (dias corridos)",
+     "valor": "7"
+    },
+    {
+     "rotulo": "Fotos no pedido (inclui outras conversas)",
+     "valor": "0"
+    },
+    {
+     "rotulo": "SLA de primeira resposta",
+     "valor": "309 min restantes"
+    }
+   ],
+   "evidencias": [],
+   "resposta_cliente": "Olá! Para darmos andamento, por favor envie uma foto do produto e da embalagem do pedido PED-035.",
+   "log": [
+    {
+     "etapa": "mascarar",
+     "resultado": "ok",
+     "ms": 0.0
+    },
+    {
+     "etapa": "classificar",
+     "resultado": "item_faltante (confiança 0,99)",
+     "ms": 0.0
+    },
+    {
+     "etapa": "consultar_pedido",
+     "resultado": "entregue",
+     "ms": 0.2
+    },
+    {
+     "etapa": "decidir",
+     "resultado": "solicitar_foto",
+     "ms": 0.0
+    },
+    {
+     "etapa": "executar",
+     "resultado": "1 executadas, 0 pendentes",
+     "ms": 0.0
+    }
+   ]
+  },
+  {
+   "alias": "CONV-046",
+   "canal": "email",
+   "marca_grupo": "Modaviva",
+   "prioridade": 46,
+   "categoria": "duvida_produto",
+   "categoria_secundaria": "cupom_promocao",
+   "acao": "responder_duvida",
+   "destino": "automatico",
+   "acoes_secundarias": [],
+   "motivo": "Ação da política para a categoria.",
+   "regra": "duvida_produto",
+   "dados": [
+    {
+     "rotulo": "SLA de primeira resposta",
+     "valor": "366 min restantes"
+    }
+   ],
+   "evidencias": [],
+   "resposta_cliente": null,
+   "log": [
+    {
+     "etapa": "mascarar",
+     "resultado": "ok",
+     "ms": 0.0
+    },
+    {
+     "etapa": "classificar",
+     "resultado": "duvida_produto (confiança 0,99)",
+     "ms": 0.0
+    },
+    {
+     "etapa": "consultar_pedido",
+     "resultado": "sem pedido",
+     "ms": 0.1
+    },
+    {
+     "etapa": "decidir",
+     "resultado": "responder_duvida",
+     "ms": 0.0
+    },
+    {
+     "etapa": "executar",
+     "resultado": "1 executadas, 0 pendentes",
+     "ms": 0.0
+    }
+   ]
+  },
+  {
+   "alias": "CONV-047",
+   "canal": "email",
+   "marca_grupo": "Belleza",
+   "prioridade": 47,
+   "categoria": "onde_esta_pedido",
+   "categoria_secundaria": null,
+   "acao": "informar_status",
+   "destino": "automatico",
+   "acoes_secundarias": [],
+   "motivo": "Informar status e previsão do pedido.",
+   "regra": "onde_esta_pedido",
+   "dados": [
+    {
+     "rotulo": "Status do pedido",
+     "valor": "em_transito"
+    },
+    {
+     "rotulo": "Valor do pedido",
+     "valor": "R$ 58,31"
+    },
+    {
+     "rotulo": "Data prometida",
+     "valor": "2026-11-04"
+    },
+    {
+     "rotulo": "Dias úteis sem movimento no rastreio",
+     "valor": "0"
+    },
+    {
+     "rotulo": "SLA de primeira resposta",
+     "valor": "413 min restantes"
+    }
+   ],
+   "evidencias": [],
+   "resposta_cliente": "Olá! Seu pedido PED-036 está em trânsito, com a transportadora TransLeste. A previsão de entrega é 04/11/2026.",
+   "log": [
+    {
+     "etapa": "mascarar",
+     "resultado": "ok",
+     "ms": 0.0
+    },
+    {
+     "etapa": "classificar",
+     "resultado": "onde_esta_pedido (confiança 0,99)",
+     "ms": 0.0
+    },
+    {
+     "etapa": "consultar_pedido",
+     "resultado": "em_transito",
+     "ms": 0.2
+    },
+    {
+     "etapa": "decidir",
+     "resultado": "informar_status",
+     "ms": 0.0
+    },
+    {
+     "etapa": "executar",
+     "resultado": "1 executadas, 0 pendentes",
+     "ms": 0.0
+    }
+   ]
+  },
+  {
+   "alias": "CONV-048",
+   "canal": "email",
+   "marca_grupo": "Belleza",
+   "prioridade": 48,
+   "categoria": "cupom_promocao",
+   "categoria_secundaria": null,
+   "acao": "validar_cupom",
+   "destino": "automatico",
+   "acoes_secundarias": [],
+   "motivo": "Ação da política para a categoria.",
+   "regra": "cupom_promocao",
+   "dados": [
+    {
+     "rotulo": "Status do pedido",
+     "valor": "aguardando_separacao"
+    },
+    {
+     "rotulo": "Valor do pedido",
+     "valor": "R$ 58,80"
+    },
+    {
+     "rotulo": "Data prometida",
+     "valor": "2026-11-09"
+    },
+    {
+     "rotulo": "SLA de primeira resposta",
+     "valor": "478 min restantes"
+    }
+   ],
+   "evidencias": [],
+   "resposta_cliente": "Olá! Para verificarmos o cupom, por favor nos informe o código exatamente como ele aparece para você.",
+   "log": [
+    {
+     "etapa": "mascarar",
+     "resultado": "ok",
+     "ms": 0.0
+    },
+    {
+     "etapa": "classificar",
+     "resultado": "cupom_promocao (confiança 0,99)",
+     "ms": 0.0
+    },
+    {
+     "etapa": "consultar_pedido",
+     "resultado": "aguardando_separacao",
+     "ms": 0.1
+    },
+    {
+     "etapa": "decidir",
+     "resultado": "validar_cupom",
+     "ms": 0.0
+    },
+    {
+     "etapa": "executar",
+     "resultado": "1 executadas, 1 pendentes",
+     "ms": 0.0
+    }
+   ]
+  },
+  {
+   "alias": "CONV-049",
+   "canal": "email",
+   "marca_grupo": "Modaviva",
+   "prioridade": 49,
+   "categoria": "atraso_entrega",
+   "categoria_secundaria": null,
+   "acao": "reenviar_produto",
+   "destino": "automatico",
+   "acoes_secundarias": [],
+   "motivo": "Pedido não entregue, atraso de 8 dias úteis (limite de 7 dias úteis); reenvio ou reembolso, à escolha do cliente. Valor dentro do limite do atendente (R$ 200.00).",
+   "regra": "atraso_entrega",
+   "dados": [
+    {
+     "rotulo": "Status do pedido",
+     "valor": "em_transito"
+    },
+    {
+     "rotulo": "Valor do pedido",
+     "valor": "R$ 94,41"
+    },
+    {
+     "rotulo": "Data prometida",
+     "valor": "2026-10-20"
+    },
+    {
+     "rotulo": "Dias úteis de atraso",
+     "valor": "8"
+    },
+    {
+     "rotulo": "Dias úteis sem movimento no rastreio",
+     "valor": "5"
+    },
+    {
+     "rotulo": "Limite do atendente",
+     "valor": "R$ 200,00"
+    },
+    {
+     "rotulo": "SLA de primeira resposta",
+     "valor": "498 min restantes"
+    }
+   ],
+   "evidencias": [],
+   "resposta_cliente": "Olá! Pedimos desculpas pelo atraso do pedido PED-037. Você pode escolher entre o reenvio do produto sem custo ou o reembolso de R$ 94,41. Qual opção você prefere?",
+   "log": [
+    {
+     "etapa": "mascarar",
+     "resultado": "ok",
+     "ms": 0.0
+    },
+    {
+     "etapa": "classificar",
+     "resultado": "atraso_entrega (confiança 0,99)",
+     "ms": 0.0
+    },
+    {
+     "etapa": "consultar_pedido",
+     "resultado": "em_transito",
+     "ms": 0.2
+    },
+    {
+     "etapa": "decidir",
+     "resultado": "reenviar_produto",
+     "ms": 0.0
+    },
+    {
+     "etapa": "executar",
+     "resultado": "1 executadas, 1 pendentes",
+     "ms": 0.0
+    }
+   ]
+  },
+  {
+   "alias": "CONV-050",
+   "canal": "email",
+   "marca_grupo": "Modaviva",
+   "prioridade": 50,
+   "categoria": "atraso_entrega",
+   "categoria_secundaria": null,
+   "acao": "abrir_chamado_transportadora",
+   "destino": "automatico",
+   "acoes_secundarias": [],
+   "motivo": "Pedido não entregue, atraso de 2 dias úteis em relação a 2026-10-28.",
+   "regra": "atraso_entrega",
+   "dados": [
+    {
+     "rotulo": "Status do pedido",
+     "valor": "em_transito"
+    },
+    {
+     "rotulo": "Valor do pedido",
+     "valor": "R$ 78,81"
+    },
+    {
+     "rotulo": "Data prometida",
+     "valor": "2026-10-28"
+    },
+    {
+     "rotulo": "Dias úteis de atraso",
+     "valor": "2"
+    },
+    {
+     "rotulo": "Dias úteis sem movimento no rastreio",
+     "valor": "1"
+    },
+    {
+     "rotulo": "SLA de primeira resposta",
+     "valor": "534 min restantes"
+    }
+   ],
+   "evidencias": [],
+   "resposta_cliente": "Olá! Abrimos um chamado com a transportadora TransLeste sobre o pedido PED-038, que tinha previsão de entrega para 28/10/2026. Assim que tivermos o retorno, avisamos você por aqui.",
+   "log": [
+    {
+     "etapa": "mascarar",
+     "resultado": "ok",
+     "ms": 0.0
+    },
+    {
+     "etapa": "classificar",
+     "resultado": "atraso_entrega (confiança 0,99)",
+     "ms": 0.0
+    },
+    {
+     "etapa": "consultar_pedido",
+     "resultado": "em_transito",
+     "ms": 0.2
+    },
+    {
+     "etapa": "decidir",
+     "resultado": "abrir_chamado_transportadora",
+     "ms": 0.0
+    },
+    {
+     "etapa": "executar",
+     "resultado": "2 executadas, 0 pendentes",
+     "ms": 0.1
+    }
+   ]
+  },
+  {
+   "alias": "CONV-051",
+   "canal": "email",
+   "marca_grupo": "Belleza",
+   "prioridade": 51,
+   "categoria": "item_faltante",
+   "categoria_secundaria": "avaria_vazamento",
+   "acao": "acionar_pessoa",
+   "destino": "pessoa",
+   "acoes_secundarias": [],
+   "motivo": "Reenvio REF-002 (2026-10-27) enviou KSH-5002; o brinde GBT-9001 do pedido não saiu em nenhum reenvio. Não pedir nova foto nem negar por prazo: a pendência vem do reenvio anterior.",
+   "regra": "item_faltante",
+   "dados": [
+    {
+     "rotulo": "Status do pedido",
+     "valor": "entregue"
+    },
+    {
+     "rotulo": "Valor do pedido",
+     "valor": "R$ 199,80"
+    },
+    {
+     "rotulo": "Dias desde a entrega",
+     "valor": "12"
+    },
+    {
+     "rotulo": "Prazo da política (dias corridos)",
+     "valor": "7"
+    },
+    {
+     "rotulo": "Fotos no pedido (inclui outras conversas)",
+     "valor": "2"
+    },
+    {
+     "rotulo": "SLA de primeira resposta",
+     "valor": "592 min restantes"
+    }
+   ],
+   "evidencias": [],
+   "resposta_cliente": "Olá! Recebemos a sua mensagem e encaminhamos o caso para a equipe responsável. Retornaremos por aqui assim que houver uma posição.",
+   "log": [
+    {
+     "etapa": "mascarar",
+     "resultado": "ok",
+     "ms": 0.0
+    },
+    {
+     "etapa": "classificar",
+     "resultado": "item_faltante (confiança 0,98)",
+     "ms": 0.0
+    },
+    {
+     "etapa": "consultar_pedido",
+     "resultado": "entregue",
+     "ms": 0.2
+    },
+    {
+     "etapa": "decidir",
+     "resultado": "acionar_pessoa",
+     "ms": 0.1
+    },
+    {
+     "etapa": "executar",
+     "resultado": "2 executadas, 0 pendentes",
+     "ms": 0.1
+    }
+   ]
+  },
+  {
+   "alias": "CONV-052",
+   "canal": "email",
+   "marca_grupo": "Belleza",
+   "prioridade": 52,
+   "categoria": "pagamento_pendente",
+   "categoria_secundaria": null,
+   "acao": "verificar_pagamento",
+   "destino": "automatico",
+   "acoes_secundarias": [],
+   "motivo": "Consultar o pagamento no gateway.",
+   "regra": "pagamento_pendente",
+   "dados": [
+    {
+     "rotulo": "Status do pedido",
+     "valor": "aguardando_separacao"
+    },
+    {
+     "rotulo": "Valor do pedido",
+     "valor": "R$ 58,80"
+    },
+    {
+     "rotulo": "Data prometida",
+     "valor": "2026-11-05"
+    },
+    {
+     "rotulo": "SLA de primeira resposta",
+     "valor": "614 min restantes"
+    }
+   ],
+   "evidencias": [],
+   "resposta_cliente": "Olá! Estamos verificando o pagamento do pedido PED-039. Pela nossa política: \"Pix compensa em até 30 minutos; boleto em até 2 dias úteis.\"",
+   "log": [
+    {
+     "etapa": "mascarar",
+     "resultado": "ok",
+     "ms": 0.0
+    },
+    {
+     "etapa": "classificar",
+     "resultado": "pagamento_pendente (confiança 0,99)",
+     "ms": 0.0
+    },
+    {
+     "etapa": "consultar_pedido",
+     "resultado": "aguardando_separacao",
+     "ms": 0.2
+    },
+    {
+     "etapa": "decidir",
+     "resultado": "verificar_pagamento",
+     "ms": 0.0
+    },
+    {
+     "etapa": "executar",
+     "resultado": "2 executadas, 0 pendentes",
+     "ms": 0.0
+    }
+   ]
+  },
+  {
+   "alias": "CONV-053",
+   "canal": "email",
+   "marca_grupo": "Belleza",
+   "prioridade": 53,
+   "categoria": "onde_esta_pedido",
+   "categoria_secundaria": null,
+   "acao": "informar_status",
+   "destino": "automatico",
+   "acoes_secundarias": [],
+   "motivo": "Informar status e previsão do pedido.",
+   "regra": "onde_esta_pedido",
+   "dados": [
+    {
+     "rotulo": "Status do pedido",
+     "valor": "em_transito"
+    },
+    {
+     "rotulo": "Valor do pedido",
+     "valor": "R$ 149,90"
+    },
+    {
+     "rotulo": "Data prometida",
+     "valor": "2026-11-04"
+    },
+    {
+     "rotulo": "Dias úteis sem movimento no rastreio",
+     "valor": "0"
+    },
+    {
+     "rotulo": "SLA de primeira resposta",
+     "valor": "617 min restantes"
+    }
+   ],
+   "evidencias": [],
+   "resposta_cliente": "Olá! Seu pedido PED-040 está em trânsito, com a transportadora Correio Ágil. A previsão de entrega é 04/11/2026.",
+   "log": [
+    {
+     "etapa": "mascarar",
+     "resultado": "ok",
+     "ms": 0.0
+    },
+    {
+     "etapa": "classificar",
+     "resultado": "onde_esta_pedido (confiança 0,98)",
+     "ms": 0.0
+    },
+    {
+     "etapa": "consultar_pedido",
+     "resultado": "em_transito",
+     "ms": 0.2
+    },
+    {
+     "etapa": "decidir",
+     "resultado": "informar_status",
+     "ms": 0.0
+    },
+    {
+     "etapa": "executar",
+     "resultado": "1 executadas, 0 pendentes",
+     "ms": 0.0
+    }
+   ]
+  },
+  {
+   "alias": "CONV-054",
+   "canal": "email",
+   "marca_grupo": "Belleza",
+   "prioridade": 54,
+   "categoria": "atraso_entrega",
+   "categoria_secundaria": null,
+   "acao": "abrir_chamado_transportadora",
+   "destino": "automatico",
+   "acoes_secundarias": [],
+   "motivo": "Pedido não entregue, atraso de 4 dias úteis em relação a 2026-10-26.",
+   "regra": "atraso_entrega",
+   "dados": [
+    {
+     "rotulo": "Status do pedido",
+     "valor": "em_transito"
+    },
+    {
+     "rotulo": "Valor do pedido",
+     "valor": "R$ 112,80"
+    },
+    {
+     "rotulo": "Data prometida",
+     "valor": "2026-10-26"
+    },
+    {
+     "rotulo": "Dias úteis de atraso",
+     "valor": "4"
+    },
+    {
+     "rotulo": "Dias úteis sem movimento no rastreio",
+     "valor": "3"
+    },
+    {
+     "rotulo": "SLA de primeira resposta",
+     "valor": "630 min restantes"
+    }
+   ],
+   "evidencias": [],
+   "resposta_cliente": "Olá! Abrimos um chamado com a transportadora TransLeste sobre o pedido PED-041, que tinha previsão de entrega para 26/10/2026. Assim que tivermos o retorno, avisamos você por aqui.",
+   "log": [
+    {
+     "etapa": "mascarar",
+     "resultado": "ok",
+     "ms": 0.0
+    },
+    {
+     "etapa": "classificar",
+     "resultado": "atraso_entrega (confiança 0,98)",
+     "ms": 0.0
+    },
+    {
+     "etapa": "consultar_pedido",
+     "resultado": "em_transito",
+     "ms": 0.2
+    },
+    {
+     "etapa": "decidir",
+     "resultado": "abrir_chamado_transportadora",
+     "ms": 0.0
+    },
+    {
+     "etapa": "executar",
+     "resultado": "2 executadas, 0 pendentes",
+     "ms": 0.1
+    }
+   ]
+  },
+  {
+   "alias": "CONV-055",
+   "canal": "email",
+   "marca_grupo": "Modaviva",
+   "prioridade": 55,
+   "categoria": "atraso_entrega",
+   "categoria_secundaria": null,
+   "acao": "reenviar_produto",
+   "destino": "automatico",
+   "acoes_secundarias": [],
+   "motivo": "Pedido não entregue, atraso de 10 dias úteis (limite de 7 dias úteis); reenvio; reembolso acima de R$ 100.00 exige aprovação do supervisor. Valor dentro do limite do atendente (R$ 200.00).",
+   "regra": "atraso_entrega",
+   "dados": [
+    {
+     "rotulo": "Status do pedido",
+     "valor": "em_transito"
+    },
+    {
+     "rotulo": "Valor do pedido",
+     "valor": "R$ 122,80"
+    },
+    {
+     "rotulo": "Data prometida",
+     "valor": "2026-10-16"
+    },
+    {
+     "rotulo": "Dias úteis de atraso",
+     "valor": "10"
+    },
+    {
+     "rotulo": "Dias úteis sem movimento no rastreio",
+     "valor": "1"
+    },
+    {
+     "rotulo": "Limite do atendente",
+     "valor": "R$ 200,00"
+    },
+    {
+     "rotulo": "SLA de primeira resposta",
+     "valor": "710 min restantes"
+    }
+   ],
+   "evidencias": [],
+   "resposta_cliente": "Olá! Pedimos desculpas pelo atraso do pedido PED-042. Podemos reenviar o produto sem custo. Se preferir o reembolso, ele passa por aprovação interna. Responda por aqui como prefere seguir.",
+   "log": [
+    {
+     "etapa": "mascarar",
+     "resultado": "ok",
+     "ms": 0.0
+    },
+    {
+     "etapa": "classificar",
+     "resultado": "atraso_entrega (confiança 0,99)",
+     "ms": 0.0
+    },
+    {
+     "etapa": "consultar_pedido",
+     "resultado": "em_transito",
+     "ms": 0.2
+    },
+    {
+     "etapa": "decidir",
+     "resultado": "reenviar_produto",
+     "ms": 0.0
+    },
+    {
+     "etapa": "executar",
+     "resultado": "1 executadas, 1 pendentes",
+     "ms": 0.0
+    }
+   ]
+  },
+  {
+   "alias": "CONV-056",
+   "canal": "email",
+   "marca_grupo": "Modaviva",
+   "prioridade": 56,
+   "categoria": "duvida_produto",
+   "categoria_secundaria": null,
+   "acao": "responder_duvida",
+   "destino": "automatico",
+   "acoes_secundarias": [],
+   "motivo": "Ação da política para a categoria.",
+   "regra": "duvida_produto",
+   "dados": [
+    {
+     "rotulo": "Status do pedido",
+     "valor": "aguardando_separacao"
+    },
+    {
+     "rotulo": "Valor do pedido",
+     "valor": "R$ 153,56"
+    },
+    {
+     "rotulo": "Data prometida",
+     "valor": "2026-11-11"
+    },
+    {
+     "rotulo": "SLA de primeira resposta",
+     "valor": "758 min restantes"
+    }
+   ],
+   "evidencias": [],
+   "resposta_cliente": null,
+   "log": [
+    {
+     "etapa": "mascarar",
+     "resultado": "ok",
+     "ms": 0.0
+    },
+    {
+     "etapa": "classificar",
+     "resultado": "duvida_produto (confiança 0,99)",
+     "ms": 0.0
+    },
+    {
+     "etapa": "consultar_pedido",
+     "resultado": "aguardando_separacao",
+     "ms": 0.2
+    },
+    {
+     "etapa": "decidir",
+     "resultado": "responder_duvida",
+     "ms": 0.0
+    },
+    {
+     "etapa": "executar",
+     "resultado": "1 executadas, 0 pendentes",
+     "ms": 0.0
+    }
+   ]
+  },
+  {
+   "alias": "CONV-057",
+   "canal": "email",
+   "marca_grupo": "Belleza",
+   "prioridade": 57,
+   "categoria": "duvida_produto",
+   "categoria_secundaria": null,
+   "acao": "responder_duvida",
+   "destino": "automatico",
+   "acoes_secundarias": [],
+   "motivo": "Ação da política para a categoria.",
+   "regra": "duvida_produto",
+   "dados": [
+    {
+     "rotulo": "Status do pedido",
+     "valor": "entregue"
+    },
+    {
+     "rotulo": "Valor do pedido",
+     "valor": "R$ 72,81"
+    },
+    {
+     "rotulo": "Dias desde a entrega",
+     "valor": "12"
+    },
+    {
+     "rotulo": "SLA de primeira resposta",
+     "valor": "824 min restantes"
+    }
+   ],
+   "evidencias": [],
+   "resposta_cliente": null,
+   "log": [
+    {
+     "etapa": "mascarar",
+     "resultado": "ok",
+     "ms": 0.0
+    },
+    {
+     "etapa": "classificar",
+     "resultado": "duvida_produto (confiança 0,99)",
+     "ms": 0.0
+    },
+    {
+     "etapa": "consultar_pedido",
+     "resultado": "entregue",
+     "ms": 0.2
+    },
+    {
+     "etapa": "decidir",
+     "resultado": "responder_duvida",
+     "ms": 0.0
+    },
+    {
+     "etapa": "executar",
+     "resultado": "1 executadas, 0 pendentes",
+     "ms": 0.0
+    }
+   ]
+  },
+  {
+   "alias": "CONV-058",
+   "canal": "email",
+   "marca_grupo": "Belleza",
+   "prioridade": 58,
+   "categoria": "item_faltante",
+   "categoria_secundaria": null,
+   "acao": "solicitar_foto",
+   "destino": "automatico",
+   "acoes_secundarias": [],
+   "motivo": "A política exige foto para esta reclamação.",
+   "regra": "item_faltante",
+   "dados": [
+    {
+     "rotulo": "Status do pedido",
+     "valor": "entregue"
+    },
+    {
+     "rotulo": "Valor do pedido",
+     "valor": "R$ 157,60"
+    },
+    {
+     "rotulo": "Dias desde a entrega",
+     "valor": "6"
+    },
+    {
+     "rotulo": "Prazo da política (dias corridos)",
+     "valor": "7"
+    },
+    {
+     "rotulo": "Fotos no pedido (inclui outras conversas)",
+     "valor": "0"
+    },
+    {
+     "rotulo": "SLA de primeira resposta",
+     "valor": "836 min restantes"
+    }
+   ],
+   "evidencias": [],
+   "resposta_cliente": "Olá! Para darmos andamento, por favor envie uma foto do produto e da embalagem do pedido PED-043.",
+   "log": [
+    {
+     "etapa": "mascarar",
+     "resultado": "ok",
+     "ms": 0.0
+    },
+    {
+     "etapa": "classificar",
+     "resultado": "item_faltante (confiança 0,99)",
+     "ms": 0.0
+    },
+    {
+     "etapa": "consultar_pedido",
+     "resultado": "entregue",
+     "ms": 0.2
+    },
+    {
+     "etapa": "decidir",
+     "resultado": "solicitar_foto",
+     "ms": 0.0
+    },
+    {
+     "etapa": "executar",
+     "resultado": "1 executadas, 0 pendentes",
+     "ms": 0.0
+    }
+   ]
+  },
+  {
+   "alias": "CONV-059",
+   "canal": "email",
+   "marca_grupo": "Modaviva",
+   "prioridade": 59,
+   "categoria": "pagamento_pendente",
+   "categoria_secundaria": null,
+   "acao": "verificar_pagamento",
+   "destino": "automatico",
+   "acoes_secundarias": [],
+   "motivo": "Consultar o pagamento no gateway.",
+   "regra": "pagamento_pendente",
+   "dados": [
+    {
+     "rotulo": "Status do pedido",
+     "valor": "aguardando_separacao"
+    },
+    {
+     "rotulo": "Valor do pedido",
+     "valor": "R$ 106,32"
+    },
+    {
+     "rotulo": "Data prometida",
+     "valor": "2026-11-12"
+    },
+    {
+     "rotulo": "SLA de primeira resposta",
+     "valor": "851 min restantes"
+    }
+   ],
+   "evidencias": [],
+   "resposta_cliente": "Olá! Estamos verificando o pagamento do pedido PED-044. Pela nossa política: \"Pix compensa em até 30 minutos; boleto em até 2 dias úteis.\"",
+   "log": [
+    {
+     "etapa": "mascarar",
+     "resultado": "ok",
+     "ms": 0.0
+    },
+    {
+     "etapa": "classificar",
+     "resultado": "pagamento_pendente (confiança 0,99)",
+     "ms": 0.0
+    },
+    {
+     "etapa": "consultar_pedido",
+     "resultado": "aguardando_separacao",
+     "ms": 0.2
+    },
+    {
+     "etapa": "decidir",
+     "resultado": "verificar_pagamento",
+     "ms": 0.0
+    },
+    {
+     "etapa": "executar",
+     "resultado": "2 executadas, 0 pendentes",
+     "ms": 0.0
+    }
+   ]
+  },
+  {
+   "alias": "CONV-060",
+   "canal": "email",
+   "marca_grupo": "Modaviva",
+   "prioridade": 60,
+   "categoria": "erro_personalizacao",
+   "categoria_secundaria": null,
+   "acao": "solicitar_foto",
+   "destino": "automatico",
+   "acoes_secundarias": [],
+   "motivo": "A política exige foto para esta reclamação.",
+   "regra": "erro_personalizacao",
+   "dados": [
+    {
+     "rotulo": "Status do pedido",
+     "valor": "entregue"
+    },
+    {
+     "rotulo": "Valor do pedido",
+     "valor": "R$ 117,31"
+    },
+    {
+     "rotulo": "Dias desde a entrega",
+     "valor": "4"
+    },
+    {
+     "rotulo": "Prazo da política (dias corridos)",
+     "valor": "7"
+    },
+    {
+     "rotulo": "Dias úteis sem movimento no rastreio",
+     "valor": "1"
+    },
+    {
+     "rotulo": "Fotos no pedido (inclui outras conversas)",
+     "valor": "0"
+    },
+    {
+     "rotulo": "SLA de primeira resposta",
+     "valor": "867 min restantes"
+    }
+   ],
+   "evidencias": [],
+   "resposta_cliente": "Olá! Para darmos andamento, por favor envie uma foto da personalização do pedido PED-045.",
+   "log": [
+    {
+     "etapa": "mascarar",
+     "resultado": "ok",
+     "ms": 0.0
+    },
+    {
+     "etapa": "classificar",
+     "resultado": "erro_personalizacao (confiança 0,98)",
+     "ms": 0.0
+    },
+    {
+     "etapa": "consultar_pedido",
+     "resultado": "entregue",
+     "ms": 0.2
+    },
+    {
+     "etapa": "decidir",
+     "resultado": "solicitar_foto",
+     "ms": 0.0
+    },
+    {
+     "etapa": "executar",
+     "resultado": "1 executadas, 0 pendentes",
+     "ms": 0.0
+    }
+   ]
+  },
+  {
+   "alias": "CONV-061",
+   "canal": "email",
+   "marca_grupo": "Modaviva",
+   "prioridade": 61,
+   "categoria": "cupom_promocao",
+   "categoria_secundaria": null,
+   "acao": "validar_cupom",
+   "destino": "automatico",
+   "acoes_secundarias": [],
+   "motivo": "Ação da política para a categoria.",
+   "regra": "cupom_promocao",
+   "dados": [
+    {
+     "rotulo": "SLA de primeira resposta",
+     "valor": "873 min restantes"
+    }
+   ],
+   "evidencias": [],
+   "resposta_cliente": "Olá! Para verificarmos o cupom, por favor nos informe o código exatamente como ele aparece para você.",
+   "log": [
+    {
+     "etapa": "mascarar",
+     "resultado": "ok",
+     "ms": 0.0
+    },
+    {
+     "etapa": "classificar",
+     "resultado": "cupom_promocao (confiança 0,96)",
+     "ms": 0.0
+    },
+    {
+     "etapa": "consultar_pedido",
+     "resultado": "sem pedido",
+     "ms": 0.1
+    },
+    {
+     "etapa": "decidir",
+     "resultado": "validar_cupom",
+     "ms": 0.0
+    },
+    {
+     "etapa": "executar",
+     "resultado": "1 executadas, 1 pendentes",
+     "ms": 0.0
+    }
+   ]
+  },
+  {
+   "alias": "CONV-062",
+   "canal": "email",
+   "marca_grupo": "Belleza",
+   "prioridade": 62,
+   "categoria": "item_faltante",
+   "categoria_secundaria": null,
+   "acao": "solicitar_foto",
+   "destino": "automatico",
+   "acoes_secundarias": [],
+   "motivo": "A política exige foto para esta reclamação.",
+   "regra": "item_faltante",
+   "dados": [
+    {
+     "rotulo": "Status do pedido",
+     "valor": "entregue"
+    },
+    {
+     "rotulo": "Valor do pedido",
+     "valor": "R$ 249,90"
+    },
+    {
+     "rotulo": "Dias desde a entrega",
+     "valor": "5"
+    },
+    {
+     "rotulo": "Prazo da política (dias corridos)",
+     "valor": "7"
+    },
+    {
+     "rotulo": "Fotos no pedido (inclui outras conversas)",
+     "valor": "0"
+    },
+    {
+     "rotulo": "SLA de primeira resposta",
+     "valor": "964 min restantes"
+    }
+   ],
+   "evidencias": [],
+   "resposta_cliente": "Olá! Para darmos andamento, por favor envie uma foto do produto e da embalagem do pedido PED-046.",
+   "log": [
+    {
+     "etapa": "mascarar",
+     "resultado": "ok",
+     "ms": 0.0
+    },
+    {
+     "etapa": "classificar",
+     "resultado": "item_faltante (confiança 0,99)",
+     "ms": 0.0
+    },
+    {
+     "etapa": "consultar_pedido",
+     "resultado": "entregue",
+     "ms": 0.2
+    },
+    {
+     "etapa": "decidir",
+     "resultado": "solicitar_foto",
+     "ms": 0.0
+    },
+    {
+     "etapa": "executar",
+     "resultado": "1 executadas, 0 pendentes",
+     "ms": 0.0
+    }
+   ]
+  },
+  {
+   "alias": "CONV-063",
+   "canal": "email",
+   "marca_grupo": "Modaviva",
+   "prioridade": 63,
+   "categoria": "atraso_entrega",
+   "categoria_secundaria": null,
+   "acao": "abrir_chamado_transportadora",
+   "destino": "automatico",
+   "acoes_secundarias": [],
+   "motivo": "Pedido não entregue, atraso de 0 dias úteis em relação a 2026-10-30.",
+   "regra": "atraso_entrega",
+   "dados": [
+    {
+     "rotulo": "Status do pedido",
+     "valor": "em_transito"
+    },
+    {
+     "rotulo": "Valor do pedido",
+     "valor": "R$ 137,80"
+    },
+    {
+     "rotulo": "Data prometida",
+     "valor": "2026-10-30"
+    },
+    {
+     "rotulo": "Dias úteis de atraso",
+     "valor": "0"
+    },
+    {
+     "rotulo": "Dias úteis sem movimento no rastreio",
+     "valor": "2"
+    },
+    {
+     "rotulo": "SLA de primeira resposta",
+     "valor": "1379 min restantes"
+    }
+   ],
+   "evidencias": [],
+   "resposta_cliente": "Olá! Abrimos um chamado com a transportadora TransNorte sobre o pedido PED-011, que tinha previsão de entrega para 30/10/2026. Assim que tivermos o retorno, avisamos você por aqui.",
+   "log": [
+    {
+     "etapa": "mascarar",
+     "resultado": "ok",
+     "ms": 0.0
+    },
+    {
+     "etapa": "classificar",
+     "resultado": "atraso_entrega (confiança 0,98)",
+     "ms": 0.0
+    },
+    {
+     "etapa": "consultar_pedido",
+     "resultado": "em_transito",
+     "ms": 0.2
+    },
+    {
+     "etapa": "decidir",
+     "resultado": "abrir_chamado_transportadora",
+     "ms": 0.0
+    },
+    {
+     "etapa": "executar",
+     "resultado": "2 executadas, 0 pendentes",
+     "ms": 0.0
+    }
+   ]
+  },
+  {
+   "alias": "CONV-064",
+   "canal": "email",
+   "marca_grupo": "Belleza",
+   "prioridade": 64,
+   "categoria": "avaria_vazamento",
+   "categoria_secundaria": null,
+   "acao": "negar_por_politica",
+   "destino": "automatico",
+   "acoes_secundarias": [],
+   "motivo": "Recebido há 10 dias; o prazo da política é de 7 dias corridos do recebimento.",
+   "regra": "avaria_vazamento",
+   "dados": [
+    {
+     "rotulo": "Status do pedido",
+     "valor": "entregue"
+    },
+    {
+     "rotulo": "Valor do pedido",
+     "valor": "R$ 44,90"
+    },
+    {
+     "rotulo": "Dias desde a entrega",
+     "valor": "10"
+    },
+    {
+     "rotulo": "Prazo da política (dias corridos)",
+     "valor": "7"
+    },
+    {
+     "rotulo": "Fotos no pedido (inclui outras conversas)",
+     "valor": "1"
+    },
+    {
+     "rotulo": "SLA de primeira resposta",
+     "valor": "1397 min restantes"
+    }
+   ],
+   "evidencias": [],
+   "resposta_cliente": "Olá! Analisamos a sua solicitação do pedido PED-047 e, infelizmente, ela está fora da nossa política. A regra é: \"Reenvio sem custo mediante foto em até 7 dias do recebimento.\"",
+   "log": [
+    {
+     "etapa": "mascarar",
+     "resultado": "ok",
+     "ms": 0.0
+    },
+    {
+     "etapa": "classificar",
+     "resultado": "avaria_vazamento (confiança 0,99)",
+     "ms": 0.0
+    },
+    {
+     "etapa": "consultar_pedido",
+     "resultado": "entregue",
+     "ms": 0.1
+    },
+    {
+     "etapa": "decidir",
+     "resultado": "negar_por_politica",
+     "ms": 0.0
+    },
+    {
+     "etapa": "executar",
+     "resultado": "1 executadas, 0 pendentes",
+     "ms": 0.0
+    }
+   ]
+  },
+  {
+   "alias": "CONV-065",
+   "canal": "whatsapp",
+   "marca_grupo": "Belleza",
+   "prioridade": 65,
+   "categoria": "duvida_produto",
+   "categoria_secundaria": null,
+   "acao": "responder_duvida",
+   "destino": "automatico",
+   "acoes_secundarias": [],
+   "motivo": "Ação da política para a categoria.",
+   "regra": "duvida_produto",
+   "dados": [
+    {
+     "rotulo": "SLA de primeira resposta",
+     "valor": "já respondida"
+    }
+   ],
+   "evidencias": [],
+   "resposta_cliente": null,
+   "log": [
+    {
+     "etapa": "mascarar",
+     "resultado": "ok",
+     "ms": 0.0
+    },
+    {
+     "etapa": "classificar",
+     "resultado": "duvida_produto (confiança 0,99)",
+     "ms": 0.0
+    },
+    {
+     "etapa": "consultar_pedido",
+     "resultado": "sem pedido",
+     "ms": 0.1
+    },
+    {
+     "etapa": "decidir",
+     "resultado": "responder_duvida",
+     "ms": 0.0
+    },
+    {
+     "etapa": "executar",
+     "resultado": "1 executadas, 0 pendentes",
+     "ms": 0.0
+    }
+   ]
+  }
+ ],
+ "tempo_referencia": {
+  "media_minutos": 12.2,
+  "conversas": 2654,
+  "fonte": "tempo_por_conversa.csv (minutos_trabalhados)"
+ }
+}

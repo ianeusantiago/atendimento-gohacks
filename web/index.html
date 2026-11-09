@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GoResolve · Triagem de Atendimento</title>
+  <meta name="description" content="Fila, decisão com evidência, aprovação humana e log do agente de triagem (Modaviva e Belleza).">
+  <link rel="stylesheet" href="styles.css">
+  <script type="module" src="app.js"></script>
+</head>
+<body>
+  <header class="topo">
+    <div class="topo-linha">
+      <div class="produto">
+        <h1>Go<span>Resolve</span></h1>
+        <p class="marca-texto">Triagem de atendimento · Modaviva e Belleza</p>
+      </div>
+      <span class="pill">Gohacks Talent 2026 · Desafio 1</span>
+    </div>
+  </header>
+
+  <p id="banner-amostra" class="banner" role="status" hidden>
+    Dados de exemplo (sintéticos). O arquivo data/results.json ainda não existe; esta tela mostra data/results.sample.json, que não corresponde a nenhuma conversa real.
+  </p>
+
+  <main>
+    <section id="estado-carregando" class="estado" aria-live="polite">
+      <p>Carregando resultados…</p>
+    </section>
+
+    <section id="estado-erro" class="estado erro" role="alert" hidden>
+      <h2>Não foi possível ler os resultados</h2>
+      <p id="erro-detalhe"></p>
+      <p>Como resolver: gere <code>web/data/results.json</code> com o export do pipeline (ou confira se <code>web/data/results.sample.json</code> existe) e abra a página por um servidor local, por exemplo <code>py -m http.server -d web 8000</code> e depois <code>http://localhost:8000</code>. Abrir o arquivo direto (file://) bloqueia a leitura do JSON.</p>
+    </section>
+
+    <div id="app" hidden>
+      <div id="resumo"></div>
+      <p id="aviso-storage" class="aviso" role="alert" hidden>Este navegador não permite guardar decisões e edições (armazenamento bloqueado). Elas valem só até recarregar a página.</p>
+
+      <nav class="abas" role="tablist" aria-label="Telas">
+        <button type="button" role="tab" data-tab="fila" aria-controls="painel-fila" aria-selected="true">Fila de entrada</button>
+        <button type="button" role="tab" data-tab="revisar" aria-controls="painel-revisar" aria-selected="false" tabindex="-1">Revisar respostas <span id="cont-revisar" class="contador"></span></button>
+        <button type="button" role="tab" data-tab="aprovacao" aria-controls="painel-aprovacao" aria-selected="false" tabindex="-1">Aprovação humana <span id="cont-aprov" class="contador"></span></button>
+        <button type="button" role="tab" data-tab="impacto" aria-controls="painel-impacto" aria-selected="false" tabindex="-1">Impacto</button>
+      </nav>
+
+      <section id="painel-fila" role="tabpanel" aria-label="Fila de entrada">
+        <div class="execucao">
+          <button type="button" class="btn btn-primario" id="rodar">▶ Iniciar o agente</button>
+          <button type="button" class="btn btn-secundario" id="pular" hidden>Pular para o fim</button>
+          <div class="progresso" aria-hidden="true"><span id="barra"></span></div>
+          <span id="progresso-txt" class="muted" aria-live="polite"></span>
+        </div>
+        <div id="filtros"></div>
+        <div class="mestre-detalhe">
+          <div id="fila" class="lista"></div>
+          <div id="detalhe" class="painel-detalhe" tabindex="-1" aria-live="polite"></div>
+        </div>
+      </section>
+
+      <section id="painel-revisar" role="tabpanel" aria-label="Revisar respostas" hidden>
+        <div id="revisar"></div>
+      </section>
+
+      <section id="painel-aprovacao" role="tabpanel" aria-label="Aprovação humana" hidden>
+        <div id="aprovacoes"></div>
+      </section>
+
+      <section id="painel-impacto" role="tabpanel" aria-label="Impacto" hidden>
+        <div id="impacto"></div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>
